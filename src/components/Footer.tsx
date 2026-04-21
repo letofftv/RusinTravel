@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Camera, Mail, Phone, Instagram, Send } from 'lucide-react';
 
 export const Footer = () => {
@@ -18,10 +19,10 @@ export const Footer = () => {
         <div>
           <h4 className="text-cream font-serif text-lg mb-6">Навигация</h4>
           <ul className="space-y-3 text-sm">
-            <li><a href="#tours" className="hover:text-sand transition-colors">Экскурсии</a></li>
-            <li><a href="#about" className="hover:text-sand transition-colors">О Николае</a></li>
-            <li><a href="#gallery" className="hover:text-sand transition-colors">Галерея</a></li>
-            <li><a href="#blog" className="hover:text-sand transition-colors">Блог</a></li>
+            <li><Link to="/ekskursii" className="hover:text-sand transition-colors">Экскурсии</Link></li>
+            <li><Link to="/obo-mne" className="hover:text-sand transition-colors">Обо мне</Link></li>
+            <li><Link to="/galereya" className="hover:text-sand transition-colors">Галерея</Link></li>
+            <li><Link to="/blog" className="hover:text-sand transition-colors">Блог</Link></li>
           </ul>
         </div>
 
@@ -46,10 +47,10 @@ export const Footer = () => {
         <div>
           <h4 className="text-cream font-serif text-lg mb-6">Соцсети</h4>
           <div className="flex gap-4">
-            <a href="#" className="w-10 h-10 border border-cream/20 rounded-full flex items-center justify-center hover:bg-cream hover:text-charcoal transition-all">
+            <a href="#" className="w-10 h-10 border border-cream/20 rounded-2xl flex items-center justify-center hover:bg-cream hover:text-charcoal transition-all">
               <Instagram size={20} />
             </a>
-            <a href="#" className="w-10 h-10 border border-cream/20 rounded-full flex items-center justify-center hover:bg-cream hover:text-charcoal transition-all">
+            <a href="#" className="w-10 h-10 border border-cream/20 rounded-2xl flex items-center justify-center hover:bg-cream hover:text-charcoal transition-all">
               <Send size={20} />
             </a>
           </div>
