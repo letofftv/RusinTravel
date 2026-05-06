@@ -1,4 +1,4 @@
-import { Tour, Review, BlogPost } from './types';
+import { Tour, Review, BlogPost, EventItem } from './types';
 
 export const TOURS: Tour[] = [
   {
@@ -6,6 +6,7 @@ export const TOURS: Tour[] = [
     slug: 'znakomstvo-s-alushtoy',
     title: 'Знакомство с Алуштой',
     subtitle: 'Авторская обзорная прогулка по исторической Алуште',
+    hook: 'Алушта раскрывается не как набор точек на карте, а как живая история.',
     shortDescription: 'Старые дачи, купеческие особняки, места съёмок, ротонда и крепость Алустон.',
     fullDescription: 'Это авторский формат Николая Русина, где важны не только точки маршрута, но и то, как город раскрывается через людей, дома, старые фотографии и детали. Прогулка проходит живо, без сухой лекции и без перегруза датами.',
     format: 'individual',
@@ -16,14 +17,16 @@ export const TOURS: Tour[] = [
     startPoint: 'площадь Советская, 1, у памятника Грибоедову',
     highlights: ['дача Батуева', 'дача «Голубка»', 'вилла Стахеева', 'храм во имя всех Крымских святых', 'башня крепости Алустон', 'ротонда'],
     features: ['Можно с детьми', 'Архивные фото', 'Взгляд местного'],
-    imageUrl: 'https://picsum.photos/seed/alushta-city/800/600',
-    category: ['Индивидуальные', 'Пешеходные']
+    imageUrl: '/PHOTOS/tour-znakomstvo-s-alushtoy.jpg',
+    category: ['Индивидуальные', 'Пешеходные'],
+    categories: ['Индивидуальные', 'Пешеходные']
   },
   {
     id: '2',
     slug: 'professorskiy-ugolok',
     title: 'Истории Профессорского уголка',
     subtitle: 'Прогулка по самому атмосферному району Алушты',
+    hook: 'Самый литературный и дачный район города.',
     shortDescription: 'Дореволюционные виллы, дачи, литературные сюжеты и истории людей.',
     fullDescription: 'Прогулка по историческому району Алушты с дореволюционными виллами, дачами, литературными сюжетами, аллеями, видами и историями людей, которые оставили след в курортной жизни города.',
     format: 'individual',
@@ -34,14 +37,16 @@ export const TOURS: Tour[] = [
     startPoint: 'у входа в ресторан «Встреча», ул. Ленина, 2',
     highlights: ['музей А. Н. Бекетова', 'вилла «Анна»', 'вилла «Марина»', 'дача семьи Ганнот', 'аллея Декабристов'],
     features: ['Архитектура', 'Литературные тропы', 'Видовые точки'],
-    imageUrl: 'https://picsum.photos/seed/villa/800/600',
-    category: ['Индивидуальные', 'Пешеходные']
+    imageUrl: '/PHOTOS/tour-professorskiy-ugolok.jpg',
+    category: ['Индивидуальные', 'Пешеходные'],
+    categories: ['Индивидуальные', 'Пешеходные']
   },
   {
     id: '3',
     slug: 'bezuezdnyy-gorod',
     title: 'Алушта: история безуездного города',
     subtitle: 'Историческая прогулка с артефактами',
+    hook: 'Глубокое погружение в прошлое через детали.',
     shortDescription: 'Рассказы о людях, домах и событиях, которые сделали Алушту интереснее.',
     fullDescription: 'Историческая прогулка с артефактами, старыми фотографиями и рассказами о людях, домах и событиях, которые сделали Алушту гораздо интереснее, чем кажется на первый взгляд.',
     format: 'group',
@@ -51,14 +56,16 @@ export const TOURS: Tour[] = [
     startPoint: 'площадь Советская, возле фонтана',
     highlights: ['старая городская среда', 'архитектурные детали', 'знаковые дома', 'артефакты'],
     features: ['Глубокое погружение', 'Старые фото', 'Редкие факты'],
-    imageUrl: 'https://picsum.photos/seed/history/800/600',
-    category: ['Сборные', 'Пешеходные']
+    imageUrl: '/PHOTOS/tour-bezuezdnyy-gorod.jpg',
+    category: ['Сборные', 'Пешеходные'],
+    categories: ['Сборные', 'Пешеходные']
   },
   {
     id: '4',
     slug: 'rassvetnaya-naberezhnaya',
     title: 'Рассветная набережная',
     subtitle: 'Утренняя прогулка перед пробуждением города',
+    hook: 'Увидеть Алушту без суеты.',
     shortDescription: 'История набережной, главный символ Алушты и рассвет у моря.',
     fullDescription: 'Утренняя прогулка по набережной, когда город ещё не успел включить дневную суету. История набережной, старые фотографии, главный символ Алушты и рассвет у моря.',
     format: 'seasonal',
@@ -68,14 +75,16 @@ export const TOURS: Tour[] = [
     startPoint: 'обелиск первому правительству Республики Таврида',
     highlights: ['набережная', 'ротонда', 'рассвет'],
     features: ['Без суеты', 'Рассвет у моря', 'Уникальная атмосфера'],
-    imageUrl: 'https://picsum.photos/seed/sunrise/800/600',
-    category: ['Сезонные', 'Пешеходные']
+    imageUrl: '/PHOTOS/tour-rassvetnaya-naberezhnaya.jpg',
+    category: ['Сезонные', 'Пешеходные'],
+    categories: ['Сезонные', 'Пешеходные']
   },
   {
     id: '5',
     slug: 'ne-vydumannye-istorii',
     title: 'неВыдуманные истории Алушты',
     subtitle: 'Интерактивная прогулка в формате «правда или ложь»',
+    hook: 'Проверьте свою интуицию и знание истории.',
     shortDescription: 'Попробуйте отличить реальные факты от красивых городских легенд.',
     fullDescription: 'Интерактивная прогулка в формате «правда или ложь»: Николай рассказывает две версии истории, а участники угадывают, где факт, а где красивая выдумка.',
     format: 'interactive',
@@ -85,14 +94,16 @@ export const TOURS: Tour[] = [
     startPoint: 'центр города',
     highlights: ['знаковые места', 'интерактивные остановки', 'городские байки'],
     features: ['Интерактив', 'Для всей семьи', 'Игровой формат'],
-    imageUrl: 'https://picsum.photos/seed/mystery/800/600',
-    category: ['Индивидуальные', 'Семейные', 'Интерактивные']
+    imageUrl: '/PHOTOS/tour-ne-vydumannye-istorii.jpg',
+    category: ['Индивидуальные', 'Семейные', 'Интерактивные'],
+    categories: ['Индивидуальные', 'Семейные', 'Интерактивные']
   },
   {
     id: '6',
     slug: 'alushta-v-kino',
     title: 'Алушта в кино',
     subtitle: 'Прогулка по местам съёмок великих фильмов',
+    hook: 'Город как большая съёмочная площадка.',
     shortDescription: 'Советское кино, узнаваемые ракурсы и истории о том, как курорт попадал в кадр.',
     fullDescription: 'Прогулка по местам, где Алушта становилась съёмочной площадкой. Советское кино, узнаваемые ракурсы, городские легенды и истории о том, как курорт попадал в кадр.',
     format: 'group',
@@ -102,14 +113,16 @@ export const TOURS: Tour[] = [
     startPoint: 'площадь Советская',
     highlights: ['места съемок Кавказской пленницы', 'Спортлото-82', 'узнаваемые виды'],
     features: ['Для киноманов', 'Легкий маршрут', 'Много фото'],
-    imageUrl: 'https://picsum.photos/seed/cinema/800/600',
-    category: ['Пешеходные', 'Сборные']
+    imageUrl: '/PHOTOS/tour-alushta-v-kino.jpg',
+    category: ['Пешеходные', 'Сборные'],
+    categories: ['Пешеходные', 'Сборные']
   },
   {
     id: '7',
     slug: 'kraevedcheskaya-veloprogulka',
     title: 'Краеведческая велопрогулка по Алуште',
     subtitle: 'Активный формат для тех, кто хочет увидеть больше',
+    hook: 'История в движении.',
     shortDescription: 'Набережная, Профессорский уголок, остановки у достопримечательностей и краеведческие истории по пути.',
     fullDescription: 'Активный формат для тех, кто хочет увидеть больше за короткое время: набережная, Профессорский уголок, остановки у достопримечательностей и краеведческие истории по пути.',
     format: 'bike',
@@ -119,14 +132,16 @@ export const TOURS: Tour[] = [
     startPoint: 'велопрокат по ул. Ленина, 8а',
     highlights: ['набережная', 'Профессорский уголок', 'остановки у достопримечательностей'],
     features: ['На велосипеде', 'Быстрый темп', 'Охват'],
-    imageUrl: 'https://picsum.photos/seed/bike/800/600',
-    category: ['Велоформат']
+    imageUrl: '/PHOTOS/tour-kraevedcheskaya-veloprogulka.jpg',
+    category: ['Велоформат'],
+    categories: ['Велоформат']
   },
   {
     id: '8',
     slug: 'neturisticheskaya-alushta',
     title: 'Нетуристическая Алушта',
     subtitle: 'Маршрут по местам, которые редко попадают в обычные экскурсии',
+    hook: 'Увидеть то, что скрыто от глаз большинства.',
     shortDescription: 'Дома, дворы, забытые сюжеты, скрытые детали и неожиданная городская история.',
     fullDescription: 'Маршрут по местам, которые редко попадают в обычные экскурсии: дома, дворы, забытые сюжеты, скрытые детали и неожиданная городская история.',
     format: 'individual',
@@ -136,14 +151,16 @@ export const TOURS: Tour[] = [
     startPoint: 'уточняйте',
     highlights: ['непарадные улицы', 'городские детали', 'дома', 'дворы', 'локальные сюжеты'],
     features: ['Глубокая история', 'Неизведанное', 'Для гурманов'],
-    imageUrl: 'https://picsum.photos/seed/secret/800/600',
-    category: ['Индивидуальные', 'Пешеходные']
+    imageUrl: '/PHOTOS/tour-neturisticheskaya-alushta.jpg',
+    category: ['Индивидуальные', 'Пешеходные'],
+    categories: ['Индивидуальные', 'Пешеходные']
   },
   {
     id: '9',
     slug: 'oni-srazhalis-za-rodinu',
     title: 'Они сражались за Родину',
     subtitle: 'Военно-историческая прогулка',
+    hook: 'Память города в лицах и событиях.',
     shortDescription: 'Военно-историческая прогулка о людях, которые защищали Родину и оставили след в истории Алушты.',
     fullDescription: 'Военно-историческая прогулка о людях, которые защищали Родину и оставили след в истории Алушты. Не набор дат, а человеческие истории о мужестве, памяти и любви к своей земле.',
     format: 'military',
@@ -153,8 +170,30 @@ export const TOURS: Tour[] = [
     startPoint: 'сквер имени 40-летия Победы в Алуште',
     highlights: ['памятные места Алушты, связанные с историей Великой Победы'],
     features: ['Память', 'Военная история'],
-    imageUrl: 'https://picsum.photos/seed/military/800/600',
-    category: ['Спецпроект', 'Пешеходные']
+    imageUrl: '/PHOTOS/tour-oni-srazhalis-za-rodinu.jpg',
+    category: ['Спецпроект', 'Пешеходные'],
+    categories: ['Спецпроект', 'Пешеходные']
+  }
+];
+
+export const EVENTS: EventItem[] = [
+  {
+    id: 'e1',
+    slug: 'vstrecha-alushta-v-kino',
+    title: 'Алушта в кино: спецпоказ и прогулка',
+    linkedTourId: '6',
+    description: 'Особый формат прогулки с просмотром архивных кадров и историй со съемочных площадок.',
+    dateStart: '2026-05-20T10:00:00',
+    duration: '3 часа',
+    startPoint: 'площадь Советская',
+    price: '1 500 ₽',
+    priceValue: 1500,
+    seatsTotal: 15,
+    seatsAvailable: 8,
+    paymentEnabled: true,
+    status: 'published',
+    category: ['Кино', 'Групповая'],
+    imageUrl: '/PHOTOS/tour-alushta-v-kino.jpg'
   }
 ];
 
@@ -192,8 +231,9 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Почему Алушта не стала второй Ялтой',
     category: 'История',
     excerpt: 'Иногда история города определяется не только тем, что построили, но и тем, что так и не случилось.',
-    imageUrl: 'https://picsum.photos/seed/oldcity/800/400',
-    publishedAt: '2026-04-10'
+    imageUrl: '/PHOTOS/blog-pochemu-alushta-ne-stala-yaltoy.jpg',
+    publishedAt: '2026-04-10',
+    isPublished: true
   },
   {
     id: '2',
@@ -201,7 +241,9 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Что можно узнать о городе по одной старой фотографии',
     category: 'Архив',
     excerpt: 'Старые снимки хороши тем, что не спорят. Они просто показывают детали, которые современный город уже успел спрятать.',
-    imageUrl: 'https://picsum.photos/seed/archive/800/400',
-    publishedAt: '2026-04-15'
+    imageUrl: '/PHOTOS/blog-odna-staraya-fotografiya.jpg',
+    publishedAt: '2026-04-15',
+    isPublished: true
   }
 ];
+

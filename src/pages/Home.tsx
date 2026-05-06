@@ -45,7 +45,7 @@ export const Home = () => {
             <div className="relative mb-12 lg:mb-0 lg:pr-8">
               <div className="aspect-square rounded-2xl overflow-hidden">
                 <img
-                  src="https://picsum.photos/seed/alushtadetail/1000/1000"
+                  src="/PHOTOS/about-vintage-photo.jpg"
                   alt="Детали Алушты"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -97,7 +97,7 @@ export const Home = () => {
                 <motion.div key={i} variants={childVariants} className="flex gap-4">
                   <div className="w-1.5 h-1.5 bg-marine rounded-full mt-2 shrink-0" />
                   <div>
-                    <h4 className="font-bold text-charcoal mb-1">{item.title}</h4>
+                    <h4 className="text-lg font-bold text-charcoal mb-1">{item.title}</h4>
                     <p className="text-sm text-charcoal/60 leading-relaxed">{item.desc}</p>
                   </div>
                 </motion.div>
@@ -118,35 +118,6 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* Tours Section */}
-      <section id="tours" className="py-24 author-gradient">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={sectionVariants}
-            className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16"
-          >
-            <div className="max-w-2xl">
-              <h2 className="text-4xl md:text-6xl font-serif text-charcoal mb-6">Выберите прогулку</h2>
-              <p className="text-charcoal/60 text-lg">
-                Можно начать с обзорной прогулки по исторической Алуште, уйти в атмосферу Профессорского уголка, встретить рассвет на набережной или выбрать интерактивный маршрут, где нужно отличать реальные факты от красивых выдумок.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-4">
-              <Link to="/ekskursii" className="px-6 py-2 bg-charcoal text-cream rounded-2xl text-sm font-medium hover:bg-marine transition-colors duration-300">Все экскурсии</Link>
-            </div>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-            {TOURS.slice(0, 3).map((tour) => (
-              <ExcursionCard key={tour.id} tour={tour} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* About Section */}
       <section id="about" className="py-32 bg-cream overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
@@ -160,7 +131,7 @@ export const Home = () => {
             >
               <div className="aspect-[3/4] bg-sand rounded-2xl relative overflow-hidden group">
                 <img
-                  src="https://picsum.photos/seed/nikolayrusin/800/1200"
+                  src="/PHOTOS/about-nikolay-rusin.jpg"
                   alt="Николай Русин"
                   className="w-full h-full object-cover grayscale brightness-110 contrast-110 group-hover:grayscale-0 transition-all duration-1000"
                   referrerPolicy="no-referrer"
@@ -217,50 +188,31 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* Reviews */}
-      <section id="reviews" className="py-24 bg-white">
+      {/* Tours Section */}
+      <section id="tours" className="py-24 author-gradient">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.h2
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={sectionVariants}
-            className="text-4xl md:text-5xl font-serif text-charcoal mb-16 text-center"
-          >
-            Что говорят гости
-          </motion.h2>
-
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-            variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={sectionVariants}
+            className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16"
           >
-            {REVIEWS.slice(0, 4).map((review) => (
-              <motion.div key={review.id} variants={childVariants} className="bg-cream rounded-2xl p-10 relative overflow-hidden group">
-                <Quote className="absolute -top-4 -right-4 w-32 h-32 text-charcoal/5 -rotate-12 group-hover:rotate-0 transition-transform duration-700" />
-                <p className="text-xl font-serif text-charcoal mb-8 leading-relaxed italic z-10 relative">
-                  "{review.text}"
-                </p>
-                <div className="flex items-center justify-between z-10 relative">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-sand rounded-full" />
-                    <div>
-                      <h4 className="font-bold text-charcoal">{review.author}</h4>
-                      <p className="text-xs text-charcoal/40">Источник: {review.source}</p>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+            <div className="max-w-2xl">
+              <h2 className="text-4xl md:text-6xl font-serif text-charcoal mb-6">Выберите прогулку</h2>
+              <p className="text-charcoal/60 text-lg">
+                Можно начать с обзорной прогулки по исторической Алуште, уйти в атмосферу Профессорского уголка, встретить рассвет на набережной или выбрать интерактивный маршрут, где нужно отличать реальные факты от красивых выдумок.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-4">
+              <Link to="/ekskursii" className="px-6 py-2 bg-charcoal text-cream rounded-2xl text-sm font-medium hover:bg-marine transition-colors duration-300">Все экскурсии</Link>
+            </div>
           </motion.div>
 
-          <div className="mt-16 text-center">
-            <a href="#" className="inline-flex items-center gap-2 text-marine font-bold hover:underline hover:gap-3 transition-all duration-300">
-              Смотреть все отзывы на Sputnik8
-              <ChevronRight size={18} />
-            </a>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+            {TOURS.slice(0, 3).map((tour) => (
+              <ExcursionCard key={tour.id} tour={tour} />
+            ))}
           </div>
         </div>
       </section>
@@ -312,6 +264,54 @@ export const Home = () => {
               <img src="https://picsum.photos/seed/alushta5/600/600" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" referrerPolicy="no-referrer" />
             </motion.div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Reviews */}
+      <section id="reviews" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.h2
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={sectionVariants}
+            className="text-4xl md:text-5xl font-serif text-charcoal mb-16 text-center"
+          >
+            Что говорят гости
+          </motion.h2>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            variants={staggerContainer}
+            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          >
+            {REVIEWS.slice(0, 4).map((review) => (
+              <motion.div key={review.id} variants={childVariants} className="bg-cream rounded-2xl p-10 relative overflow-hidden group">
+                <Quote className="absolute -top-4 -right-4 w-32 h-32 text-charcoal/5 -rotate-12 group-hover:rotate-0 transition-transform duration-700" />
+                <p className="text-xl font-serif text-charcoal mb-8 leading-relaxed italic z-10 relative">
+                  "{review.text}"
+                </p>
+                <div className="flex items-center justify-between z-10 relative">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-sand rounded-full" />
+                    <div>
+                      <h4 className="font-bold text-charcoal">{review.author}</h4>
+                      <p className="text-xs text-charcoal/40">Источник: {review.source}</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <div className="mt-16 text-center">
+            <a href="#" className="inline-flex items-center gap-2 text-marine font-bold hover:underline hover:gap-3 transition-all duration-300">
+              Смотреть все отзывы на Sputnik8
+              <ChevronRight size={18} />
+            </a>
+          </div>
         </div>
       </section>
 
@@ -405,7 +405,7 @@ export const Home = () => {
                   <MapPin size={24} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-charcoal mb-1">Точка встречи</h4>
+                  <h4 className="text-lg font-bold text-charcoal mb-1">Точка встречи</h4>
                   <p className="text-sm text-charcoal/50">Зависит от маршрута, чаще всего — центр города у Кольца или памятник Грибоедову.</p>
                 </div>
               </div>
@@ -415,7 +415,7 @@ export const Home = () => {
                   <Calendar size={24} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-charcoal mb-1">Расписание</h4>
+                  <h4 className="text-lg font-bold text-charcoal mb-1">Расписание</h4>
                   <p className="text-sm text-charcoal/50">Индивидуально, по договорённости. Рекомендую бронировать за 2-3 дня.</p>
                 </div>
               </div>
@@ -425,7 +425,7 @@ export const Home = () => {
                   <Clock size={24} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-charcoal mb-1">Длительность</h4>
+                  <h4 className="text-lg font-bold text-charcoal mb-1">Длительность</h4>
                   <p className="text-sm text-charcoal/50">Обычно 1.5 - 2.5 часа. Оптимальное время, чтобы не устать и всё увидеть.</p>
                 </div>
               </div>
