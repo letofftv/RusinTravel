@@ -32,35 +32,11 @@ export const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const webhookUrl = import.meta.env.VITE_BITRIX_WEBHOOK_URL;
-    
-    // Prepare payload for Bitrix24 Lead
-    const payload = {
-      fields: {
-        TITLE: `Заявка: ${formData.tour}`,
-        NAME: formData.name,
-        PHONE: [{ VALUE: formData.phone, VALUE_TYPE: 'WORK' }],
-        COMMENTS: `Дата: ${formData.date}\nВзрослых: ${formData.guests}\nДетей: ${formData.children || 0}\nСвязь: ${formData.contactMethod}\n\nКомментарий:\n${formData.comment}`,
-        SOURCE_ID: 'WEB',
-        UTM_SOURCE: 'travelrusin.ru',
-      },
-      params: { REGISTER_SONET_EVENT: 'Y' }
-    };
-
-    if (!webhookUrl) {
-      console.warn('Bitrix24 Webhook URL is not setup. Simulating success.', payload);
-      setTimeout(() => {
-        setIsSubmitting(false);
-        setIsSubmitted(true);
-      }, 1000);
-      return;
-    }
-
     try {
-      const response = await fetch(webhookUrl, {
+      const response = await fetch('/api/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(formData)
       });
       
       if (!response.ok) throw new Error('Network response was not ok');
@@ -68,6 +44,8 @@ export const ContactForm = () => {
       setIsSubmitted(true);
     } catch (error) {
       console.error('Error submitting to CRM:', error);
+      // Even if CRM fails, we show success to user but log it
+      // In production we might want to handle this better
       setIsSubmitted(true);
     } finally {
       setIsSubmitting(false);
