@@ -73,7 +73,7 @@ export const Footer = () => {
         <div className="border-t border-cream/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-widest opacity-30 font-sans">
           <span>© 2026 Николай Русин. Алушта, Крым</span>
           <span className="flex items-center gap-2">
-            Сайт собран <a href="https://antigravity.ai" className="hover:text-turquoise transition-colors">Antigravity AI</a>
+            Сайт сделали в <a href="https://ailikeit.ru" className="hover:text-turquoise transition-colors">ailikeit.ru</a>
           </span>
         </div>
       </div>
