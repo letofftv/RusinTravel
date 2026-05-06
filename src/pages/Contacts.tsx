@@ -30,23 +30,19 @@ export const Contacts = () => {
                     <Phone size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-charcoal mb-1 text-lg">Телефон</h4>
+                    <h4 className="font-bold text-charcoal mb-1 text-lg">Телефон / Max</h4>
                     <a href="tel:+79787051954" className="text-charcoal/70 hover:text-marine transition-colors text-xl font-serif">+7 (978) 705-19-54</a>
-                    <p className="text-sm text-charcoal/40 mt-1">Звонки принимаются по возможности, лучше писать в мессенджеры.</p>
+                    <p className="text-sm text-charcoal/40 mt-1">Звонки принимаются по возможности, лучше писать в Telegram.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-6">
                   <div className="w-14 h-14 bg-marine/10 flex items-center justify-center rounded-xl text-marine">
-                    <MessageSquare size={24} />
+                    <Send size={24} />
                   </div>
                   <div>
                     <h4 className="font-bold text-charcoal mb-1 text-lg">Мессенджеры</h4>
                     <div className="flex flex-col gap-3">
-                      <a href="https://wa.me/79787051954" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-charcoal/70 hover:text-marine transition-colors">
-                        <span className="font-medium">WhatsApp / Max:</span>
-                        <span>+7 (978) 705-19-54</span>
-                      </a>
                       <a href="https://t.me/nikolay_alushta" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-charcoal/70 hover:text-marine transition-colors">
                         <span className="font-medium">Telegram:</span>
                         <span>@nikolay_alushta</span>
