@@ -1,5 +1,4 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { PageLayout } from './components/layout/PageLayout';
 import { Home } from './pages/Home';
@@ -18,30 +17,34 @@ import { Offer } from './pages/legal/Offer';
 import { PersonalDataConsent } from './pages/legal/PersonalDataConsent';
 import { BookingRules } from './pages/legal/BookingRules';
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <PageLayout />,
+    children: [
+      { index: true, element: <Home /> },
+      { path: "ekskursii", element: <Excursions /> },
+      { path: "ekskursii/:slug", element: <ExcursionDetail /> },
+      { path: "obo-mne", element: <About /> },
+      { path: "galereya", element: <Gallery /> },
+      { path: "events", element: <Events /> },
+      { path: "events/:slug", element: <EventDetail /> },
+      { path: "blog", element: <Blog /> },
+      { path: "blog/:slug", element: <BlogPostPage /> },
+      { path: "kontakty", element: <Contacts /> },
+      { path: "legal/privacy", element: <PrivacyPolicy /> },
+      { path: "legal/offer", element: <Offer /> },
+      { path: "legal/personal-data", element: <PersonalDataConsent /> },
+      { path: "legal/booking-rules", element: <BookingRules /> },
+      { path: "*", element: <NotFound /> },
+    ],
+  },
+]);
+
 export default function App() {
   return (
     <HelmetProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<PageLayout />}>
-            <Route index element={<Home />} />
-            <Route path="ekskursii" element={<Excursions />} />
-            <Route path="ekskursii/:slug" element={<ExcursionDetail />} />
-            <Route path="obo-mne" element={<About />} />
-            <Route path="galereya" element={<Gallery />} />
-            <Route path="events" element={<Events />} />
-            <Route path="events/:slug" element={<EventDetail />} />
-            <Route path="blog" element={<Blog />} />
-            <Route path="blog/:slug" element={<BlogPostPage />} />
-            <Route path="kontakty" element={<Contacts />} />
-            <Route path="legal/privacy" element={<PrivacyPolicy />} />
-            <Route path="legal/offer" element={<Offer />} />
-            <Route path="legal/personal-data" element={<PersonalDataConsent />} />
-            <Route path="legal/booking-rules" element={<BookingRules />} />
-            <Route path="*" element={<NotFound />} />
-          </Route>
-        </Routes>
-      </Router>
+      <RouterProvider router={router} />
     </HelmetProvider>
   );
 }
