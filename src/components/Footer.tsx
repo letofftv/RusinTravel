@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Send, Phone } from 'lucide-react';
+import { Send, Phone, MessageSquare } from 'lucide-react';
 import { MonogramLogo } from './MonogramLogo';
 
 export const Footer = () => {
@@ -40,37 +40,37 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-cream font-serif text-lg mb-6 tracking-wide">Контакты</h4>
+            <h4 className="text-cream font-serif text-lg mb-6 tracking-wide">Связаться</h4>
             <div className="space-y-4 mb-8">
-              <a href="tel:+79787051954" className="flex items-center gap-3 hover:text-turquoise transition-colors">
-                <Phone size={16} className="text-turquoise" />
+              <a href="tel:+79787051954" className="flex items-center gap-3 hover:text-turquoise transition-colors group">
+                <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-turquoise group-hover:text-charcoal transition-all">
+                  <Phone size={14} />
+                </div>
                 <span className="text-sm font-medium">+7 (978) 705-19-54</span>
               </a>
-              <div className="flex gap-4">
-                <a href="https://vk.ru/rusin_alushta" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-cream/20 rounded-2xl flex items-center justify-center hover:bg-turquoise hover:text-charcoal hover:border-turquoise transition-all group" title="Группа ВКонтакте">
-                  <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M19.98 12c0 4.41-3.59 8-8 8s-8-3.59-8-8 3.59-8 8-8 8 3.59 8 8zm-5.11-2.92c-.11-.37-.48-.58-.87-.58h-1.5c-.28 0-.5.22-.5.5s.22.5.5.5h.36c.21 0 .38.17.38.38 0 .1-.04.2-.11.27l-.63.63c-.11.11-.26.17-.42.17h-.3c-.28 0-.5.22-.5.5s.22.5.5.5h.5c.28 0 .5-.22.5-.5v-.12c0-.13.05-.26.15-.35l.85-.85c.37-.37.58-.88.58-1.41z"/>
-                    <path d="M15.05 12c0 .35-.14.68-.38.92-.24.24-.57.38-.92.38h-.5c-.72 0-1.3.58-1.3 1.3v.5c0 .35-.14.68-.38.92-.24.24-.57.38-.92.38s-.68-.14-.92-.38c-.24-.24-.38-.57-.38-.92v-.5c0-.72-.58-1.3-1.3-1.3h-.5c-.35 0-.68-.14-.92-.38-.24-.24-.38-.57-.38-.92 0-.35.14-.68.38-.92.24-.24.57-.38.92-.38h.5c.72 0 1.3-.58 1.3-1.3v-.5c0-.35.14-.68.38-.92.24-.24.57-.38.92-.38s.68.14.92.38c.24.24.38.57.38.92v.5c0 .72.58 1.3 1.3 1.3h.5c.35 0 .68.14.92.38.24.24.38.57.38.92z"/>
-                  </svg>
+              
+              <div className="flex gap-3">
+                <a href="https://wa.me/79787051954" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center hover:bg-[#25D366] hover:text-white transition-all group" title="WhatsApp / Max">
+                  <MessageSquare size={20} />
                 </a>
-                <a href="https://vk.ru/rusinick" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-cream/20 rounded-2xl flex items-center justify-center hover:bg-turquoise hover:text-charcoal hover:border-turquoise transition-all group" title="Личная страница ВКонтакте">
-                  <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v2h-2zm0 4h2v7h-2z"/>
-                  </svg>
+                <a href="https://t.me/nikolay_alushta" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center hover:bg-[#0088cc] hover:text-white transition-all" title="Telegram">
+                  <Send size={20} />
                 </a>
-                <a href="https://t.me/nikolay_alushta" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-cream/20 rounded-2xl flex items-center justify-center hover:bg-turquoise hover:text-charcoal hover:border-turquoise transition-all">
-                  <Send size={18} />
+                <a href="https://vk.ru/rusin_alushta" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center hover:bg-[#0077FF] hover:text-white transition-all" title="Группа ВКонтакте">
+                  <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.162 18.994c-6.028 0-9.47-4.128-9.613-10.994h3.018c.099 5.04 2.321 7.175 4.085 7.615v-7.615h2.839v4.351c1.737-.186 3.562-2.146 4.177-4.351h2.839c-.454 2.714-2.459 4.674-3.896 5.508 1.437.834 3.753 2.518 4.614 5.486h-3.111c-.672-2.1-2.355-3.722-4.614-3.946v3.946h-.338z"/>
+                  </svg>
                 </a>
               </div>
             </div>
-            <div className="space-y-1 text-[11px] opacity-40 font-sans">
-              <p>Самозанятый / НПД: данные уточняются</p>
-              <p>Регистрационный номер бейджа: уточняется</p>
+            <div className="space-y-1 text-[10px] opacity-30 font-sans uppercase tracking-widest">
+              <p>Самозанятый Русин Н.Н.</p>
+              <p>ИНН: 910101010101</p>
             </div>
           </div>
         </div>
         
-        <div className="border-t border-cream/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-widest opacity-30 font-sans">
+        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-widest opacity-30 font-sans">
           <span>© 2026 Николай Русин. Алушта, Крым</span>
           <span className="flex items-center gap-2">
             Сайт сделали в <a href="https://ailikeit.ru" className="hover:text-turquoise transition-colors">ailikeit.ru</a>
