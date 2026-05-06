@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { ContactForm } from '../components/ContactForm';
-import { Phone, Mail, Send, MapPin, Map } from 'lucide-react';
+import { Phone, Mail, Send, MapPin, MessageSquare } from 'lucide-react';
 
 export const Contacts = () => {
   useEffect(() => {
@@ -31,19 +31,27 @@ export const Contacts = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-charcoal mb-1 text-lg">Телефон</h4>
-                    <p className="text-charcoal/70 mb-2">+7 (XXX) XXX-XX-XX</p>
-                    <p className="text-sm text-charcoal/40">Звонки принимаются по возможности, лучше писать в мессенджеры.</p>
+                    <a href="tel:+79787051954" className="text-charcoal/70 hover:text-marine transition-colors text-xl font-serif">+7 (978) 705-19-54</a>
+                    <p className="text-sm text-charcoal/40 mt-1">Звонки принимаются по возможности, лучше писать в мессенджеры.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-6">
                   <div className="w-14 h-14 bg-marine/10 flex items-center justify-center rounded-xl text-marine">
-                    <Send size={24} />
+                    <MessageSquare size={24} />
                   </div>
                   <div>
                     <h4 className="font-bold text-charcoal mb-1 text-lg">Мессенджеры</h4>
-                    <p className="text-charcoal/70 mb-2">Telegram / WhatsApp</p>
-                    <a href="#" className="text-marine font-medium hover:underline">@nikolayalushta</a>
+                    <div className="flex flex-col gap-3">
+                      <a href="https://wa.me/79787051954" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-charcoal/70 hover:text-marine transition-colors">
+                        <span className="font-medium">WhatsApp / Max:</span>
+                        <span>+7 (978) 705-19-54</span>
+                      </a>
+                      <a href="https://t.me/nikolay_alushta" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-charcoal/70 hover:text-marine transition-colors">
+                        <span className="font-medium">Telegram:</span>
+                        <span>@nikolay_alushta</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
 
@@ -68,14 +76,27 @@ export const Contacts = () => {
                   </div>
                 </div>
               </div>
+
+              <div className="mt-16 p-8 bg-marine/5 rounded-3xl border border-marine/10">
+                <h4 className="font-serif text-xl text-charcoal mb-4">Социальные сети</h4>
+                <div className="flex gap-4">
+                  <a href="https://vk.ru/rusin_alushta" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-white border border-slate-200 rounded-xl text-sm font-bold text-slate-600 hover:bg-marine hover:text-white hover:border-marine transition-all">
+                    Группа VK
+                  </a>
+                  <a href="https://vk.ru/rusinick" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-white border border-slate-200 rounded-xl text-sm font-bold text-slate-600 hover:bg-marine hover:text-white hover:border-marine transition-all">
+                    Николай VK
+                  </a>
+                </div>
+              </div>
             </div>
 
-            <div className="bg-white p-8 rounded-2xl shadow-xl border border-sand/20 relative">
+            <div className="bg-white p-8 md:p-10 rounded-[32px] shadow-2xl border border-sand/20 relative">
               <div className="absolute -top-6 -right-6 w-24 h-24 bg-sand/20 rounded-full blur-2xl" />
               <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-marine/10 rounded-full blur-2xl" />
               
               <div className="relative z-10">
-                <h3 className="text-2xl font-serif text-charcoal mb-8">Задать вопрос или забронировать</h3>
+                <h3 className="text-3xl font-serif text-charcoal mb-2">Написать Николаю</h3>
+                <p className="text-slate-400 text-sm mb-8">Обычно ответ приходит в течение часа</p>
                 <ContactForm />
               </div>
             </div>
