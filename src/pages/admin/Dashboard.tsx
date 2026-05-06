@@ -5,7 +5,8 @@ import {
   Calendar, 
   Map, 
   TrendingUp,
-  ArrowUpRight
+  ArrowUpRight,
+  FileText
 } from 'lucide-react';
 import { motion } from 'motion/react';
 
