@@ -20,28 +20,9 @@ import { BookingRules } from './pages/legal/BookingRules';
 
 export default function App() {
   return (
-    <HelmetProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<PageLayout />}>
-            <Route index element={<Home />} />
-            <Route path="ekskursii" element={<Excursions />} />
-            <Route path="ekskursii/:slug" element={<ExcursionDetail />} />
-            <Route path="obo-mne" element={<About />} />
-            <Route path="galereya" element={<Gallery />} />
-            <Route path="events" element={<Events />} />
-            <Route path="events/:slug" element={<EventDetail />} />
-            <Route path="blog" element={<Blog />} />
-            <Route path="blog/:slug" element={<BlogPostPage />} />
-            <Route path="kontakty" element={<Contacts />} />
-            <Route path="legal/privacy" element={<PrivacyPolicy />} />
-            <Route path="legal/offer" element={<Offer />} />
-            <Route path="legal/personal-data" element={<PersonalDataConsent />} />
-            <Route path="legal/booking-rules" element={<BookingRules />} />
-            <Route path="*" element={<NotFound />} />
-          </Route>
-        </Routes>
-      </Router>
-    </HelmetProvider>
+    <div style={{ padding: '100px', textAlign: 'center', fontSize: '24px' }}>
+      <h1>RusinTravel Debug</h1>
+      <p>Если вы видите этот текст, значит React работает.</p>
+    </div>
   );
 }
