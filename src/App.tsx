@@ -23,6 +23,7 @@ import { AdminDashboard } from './pages/admin/Dashboard';
 import { ProtectedRoute } from './components/admin/ProtectedRoute';
 
 import { AdminEvents } from './pages/admin/Events';
+import { AdminBlog } from './pages/admin/Blog';
 
 const router = createBrowserRouter([
   {
@@ -57,7 +58,7 @@ const router = createBrowserRouter([
       { index: true, element: <AdminDashboard /> },
       { path: "events", element: <AdminEvents /> },
       { path: "tours", element: <div className="p-8">Управление экскурсиями (в разработке)</div> },
-      { path: "blog", element: <div className="p-8">Управление блогом (в разработке)</div> },
+      { path: "blog", element: <AdminBlog /> },
       { path: "settings", element: <div className="p-8">Настройки сайта (в разработке)</div> },
     ],
   },
