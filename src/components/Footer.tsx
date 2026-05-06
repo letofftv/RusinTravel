@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Send, Phone, MessageSquare } from 'lucide-react';
+import { Send, Phone } from 'lucide-react';
 import { MonogramLogo } from './MonogramLogo';
 
 export const Footer = () => {
