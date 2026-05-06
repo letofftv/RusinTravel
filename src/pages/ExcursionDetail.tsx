@@ -1,18 +1,28 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { TOURS } from '../constants';
+import { useData } from '../context/DataContext';
 import { Clock, Users, Tag, MapPin, ChevronLeft, Check } from 'lucide-react';
 import { ContactForm } from '../components/ContactForm';
 import { motion } from 'motion/react';
 
 export const ExcursionDetail = () => {
   const { slug } = useParams<{ slug: string }>();
-  const tour = TOURS.find(t => t.slug === slug);
+  const { tours, isLoading } = useData();
+  const tour = tours.find(t => t.slug === slug);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [slug]);
+
+  if (isLoading) {
+    return (
+      <div className="pt-40 pb-24 text-center min-h-[60vh]">
+        <div className="animate-spin w-10 h-10 border-4 border-marine border-t-transparent rounded-full mx-auto mb-4"></div>
+        <p className="text-charcoal/50 font-serif">Загрузка деталей экскурсии...</p>
+      </div>
+    );
+  }
 
   if (!tour) {
     return (
