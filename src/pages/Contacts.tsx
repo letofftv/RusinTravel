@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { ContactForm } from '../components/ContactForm';
-import { Phone, Mail, Send, MapPin, MessageSquare } from 'lucide-react';
+import { Phone, Mail, Send, MapPin } from 'lucide-react';
 
 export const Contacts = () => {
   useEffect(() => {
