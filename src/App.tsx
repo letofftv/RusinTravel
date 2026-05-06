@@ -16,6 +16,13 @@ import { PrivacyPolicy } from './pages/legal/PrivacyPolicy';
 import { Offer } from './pages/legal/Offer';
 import { PersonalDataConsent } from './pages/legal/PersonalDataConsent';
 import { BookingRules } from './pages/legal/BookingRules';
+import { DataProvider } from './context/DataContext';
+
+import { AdminLogin } from './pages/admin/Login';
+import { AdminDashboard } from './pages/admin/Dashboard';
+import { ProtectedRoute } from './components/admin/ProtectedRoute';
+
+import { AdminEvents } from './pages/admin/Events';
 
 const router = createBrowserRouter([
   {
@@ -39,12 +46,29 @@ const router = createBrowserRouter([
       { path: "*", element: <NotFound /> },
     ],
   },
+  {
+    path: "/admin/login",
+    element: <AdminLogin />,
+  },
+  {
+    path: "/admin",
+    element: <ProtectedRoute />,
+    children: [
+      { index: true, element: <AdminDashboard /> },
+      { path: "events", element: <AdminEvents /> },
+      { path: "tours", element: <div className="p-8">Управление экскурсиями (в разработке)</div> },
+      { path: "blog", element: <div className="p-8">Управление блогом (в разработке)</div> },
+      { path: "settings", element: <div className="p-8">Настройки сайта (в разработке)</div> },
+    ],
+  },
 ]);
 
 export default function App() {
   return (
     <HelmetProvider>
-      <RouterProvider router={router} />
+      <DataProvider>
+        <RouterProvider router={router} />
+      </DataProvider>
     </HelmetProvider>
   );
 }

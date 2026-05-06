@@ -2,11 +2,11 @@ import React from 'react';
 import { Hero } from '../components/Hero';
 import { ExcursionCard } from '../components/ExcursionCard';
 import { ContactForm } from '../components/ContactForm';
-import { TOURS, REVIEWS, BLOG_POSTS } from '../constants';
 import { Quote, ChevronRight, MapPin, Calendar, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'motion/react';
+import { useData } from '../context/DataContext';
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -23,6 +23,16 @@ const childVariants = {
 };
 
 export const Home = () => {
+  const { tours, reviews, blog, isLoading } = useData();
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-cream flex items-center justify-center">
+        <div className="animate-spin w-12 h-12 border-4 border-marine border-t-transparent rounded-full"></div>
+      </div>
+    );
+  }
+
   return (
     <>
       <Helmet>
@@ -138,7 +148,6 @@ export const Home = () => {
                 />
                 <div className="absolute inset-0 bg-marine/10 mix-blend-multiply" />
               </div>
-              {/* Vintage overlay decoration */}
               <div className="absolute -top-10 -left-10 w-40 h-40 border-2 border-marine/15 rounded-full -z-10" />
             </motion.div>
 
@@ -210,7 +219,7 @@ export const Home = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-            {TOURS.slice(0, 3).map((tour) => (
+            {tours.slice(0, 3).map((tour) => (
               <ExcursionCard key={tour.id} tour={tour} />
             ))}
           </div>
@@ -287,7 +296,7 @@ export const Home = () => {
             variants={staggerContainer}
             className="grid grid-cols-1 md:grid-cols-2 gap-8"
           >
-            {REVIEWS.slice(0, 4).map((review) => (
+            {reviews.slice(0, 4).map((review) => (
               <motion.div key={review.id} variants={childVariants} className="bg-cream rounded-2xl p-10 relative overflow-hidden group">
                 <Quote className="absolute -top-4 -right-4 w-32 h-32 text-charcoal/5 -rotate-12 group-hover:rotate-0 transition-transform duration-700" />
                 <p className="text-xl font-serif text-charcoal mb-8 leading-relaxed italic z-10 relative">
@@ -307,7 +316,7 @@ export const Home = () => {
           </motion.div>
 
           <div className="mt-16 text-center">
-            <a href="#" className="inline-flex items-center gap-2 text-marine font-bold hover:underline hover:gap-3 transition-all duration-300">
+            <a href="https://www.sputnik8.com/ru/alushta/guides/13597-nikolay" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-marine font-bold hover:underline hover:gap-3 transition-all duration-300">
               Смотреть все отзывы на Sputnik8
               <ChevronRight size={18} />
             </a>
@@ -336,9 +345,9 @@ export const Home = () => {
             variants={staggerContainer}
             className="grid grid-cols-1 md:grid-cols-2 gap-12"
           >
-            {BLOG_POSTS.slice(0, 2).map((post) => (
+            {blog.slice(0, 2).map((post) => (
               <motion.div key={post.id} variants={childVariants}>
-                <Link to={`/blog`} className="group block">
+                <Link to={`/blog/${post.slug}`} className="group block">
                   <div className="aspect-video rounded-xl overflow-hidden mb-6 relative">
                     <img
                       src={post.imageUrl}
@@ -383,7 +392,6 @@ export const Home = () => {
 
       {/* Contact / Booking */}
       <section id="contacts" className="py-32 bg-cream relative overflow-hidden">
-        {/* Decorative elements */}
         <div className="absolute bottom-0 right-0 w-1/3 h-full bg-marine/5 -skew-x-12 transform origin-bottom-right" />
         <div className="absolute top-20 left-10 w-24 h-24 border border-marine/10 rounded-full opacity-50" />
 

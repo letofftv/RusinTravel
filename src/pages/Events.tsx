@@ -1,13 +1,24 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { EVENTS } from '../constants';
+import { useData } from '../context/DataContext';
 import { EventCard } from '../components/EventCard';
 import { motion } from 'motion/react';
 
 export const Events = () => {
+  const { events, isLoading } = useData();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  if (isLoading) {
+    return (
+      <div className="pt-40 pb-24 text-center">
+        <div className="animate-spin w-10 h-10 border-4 border-marine border-t-transparent rounded-full mx-auto mb-4"></div>
+        <p className="text-charcoal/50 font-serif">Загрузка событий...</p>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -34,9 +45,9 @@ export const Events = () => {
 
       <section className="py-24 bg-white min-h-[50vh]">
         <div className="max-w-5xl mx-auto px-6">
-          {EVENTS.length > 0 ? (
+          {events.length > 0 ? (
             <div className="space-y-8">
-              {EVENTS.map(event => (
+              {events.map(event => (
                 <EventCard key={event.id} event={event} />
               ))}
             </div>

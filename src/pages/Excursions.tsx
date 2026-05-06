@@ -1,14 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { TOURS } from '../constants';
+import { useData } from '../context/DataContext';
 import { ExcursionCard } from '../components/ExcursionCard';
 
 export const Excursions = () => {
+  const { tours, isLoading } = useData();
   const [activeFilter, setActiveFilter] = useState('Все');
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  if (isLoading) {
+    return (
+      <div className="pt-40 pb-24 text-center">
+        <div className="animate-spin w-10 h-10 border-4 border-marine border-t-transparent rounded-full mx-auto mb-4"></div>
+        <p className="text-charcoal/50 font-serif">Загрузка экскурсий...</p>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -42,7 +52,7 @@ export const Excursions = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-            {(activeFilter === 'Все' ? TOURS : TOURS.filter(t => t.category.includes(activeFilter))).map((tour) => (
+            {(activeFilter === 'Все' ? tours : tours.filter(t => t.category.includes(activeFilter))).map((tour) => (
               <ExcursionCard key={tour.id} tour={tour} />
             ))}
           </div>
