@@ -50,9 +50,6 @@ export const Footer = () => {
               </a>
               
               <div className="flex gap-3">
-                <a href="https://wa.me/79787051954" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center hover:bg-[#25D366] hover:text-white transition-all group" title="WhatsApp / Max">
-                  <MessageSquare size={20} />
-                </a>
                 <a href="https://t.me/nikolay_alushta" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center hover:bg-[#0088cc] hover:text-white transition-all" title="Telegram">
                   <Send size={20} />
                 </a>
