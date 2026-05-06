@@ -1,10 +1,10 @@
 import React from 'react';
-import { motion, useScroll, useTransform } from 'motion/react';
+import { motion } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-[90vh] md:min-h-screen flex items-center pt-24 pb-20 overflow-hidden">
+    <section className="relative min-h-[90vh] md:min-h-screen flex items-center pt-24 pb-20 overflow-hidden bg-cream">
       {/* Background Decor */}
       <motion.div
         initial={{ opacity: 0, x: 100 }}
@@ -48,7 +48,7 @@ export const Hero = () => {
 
           <div className="flex flex-wrap gap-4">
             <motion.a
-              href="#tours"
+              href="/ekskursii"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="px-8 py-4 bg-marine text-cream rounded-2xl font-medium hover:bg-marine/90 hover:shadow-lg hover:shadow-marine/20 transition-all"
@@ -56,7 +56,7 @@ export const Hero = () => {
               Выбрать экскурсию
             </motion.a>
             <motion.a
-              href="#contacts"
+              href="/kontakty"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="px-8 py-4 border border-marine text-marine rounded-2xl font-medium hover:bg-marine/5 transition-all"
@@ -94,9 +94,9 @@ export const Hero = () => {
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
           className="relative"
         >
-          <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl shadow-charcoal/15">
+          <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl shadow-charcoal/15 bg-sand/20">
             <img
-              src="https://picsum.photos/seed/alushtaguide/1200/1500"
+              src="/PHOTOS/hero-nikolay-rusin.jpg"
               alt="Николай Русин"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
@@ -115,7 +115,7 @@ export const Hero = () => {
               "Алушта раскрывается не как набор точек на карте, а как живая история."
             </p>
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-sand" />
+              <div className="w-8 h-8 rounded-full bg-marine flex items-center justify-center text-white text-[10px] font-bold">НР</div>
               <div>
                 <p className="text-xs font-bold">Николай Русин</p>
                 <p className="text-xs text-charcoal/50">Ваш экскурсовод</p>
@@ -126,9 +126,10 @@ export const Hero = () => {
       </div>
 
       <motion.div
-        animate={{ y: [0, 8, 0] }}
-        transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-20"
       >
         <ChevronDown size={24} className="text-sand" />
       </motion.div>
