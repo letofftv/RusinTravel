@@ -14,8 +14,13 @@ export const ContactForm = () => {
     tour: 'Знакомство с Алуштой',
     date: '',
     guests: '',
+    children: '',
+    contactMethod: 'WhatsApp',
     comment: ''
   });
+
+  const [consentAccepted, setConsentAccepted] = useState(false);
+  const [offerAccepted, setOfferAccepted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -31,11 +36,12 @@ export const ContactForm = () => {
     // Prepare payload for Bitrix24 Lead
     const payload = {
       fields: {
-        TITLE: `Заявка на экскурсию: ${formData.tour}`,
+        TITLE: `Заявка: ${formData.tour}`,
         NAME: formData.name,
         PHONE: [{ VALUE: formData.phone, VALUE_TYPE: 'WORK' }],
-        COMMENTS: `Дата: ${formData.date}\nГостей: ${formData.guests}\n\nКомментарий:\n${formData.comment}`,
+        COMMENTS: `Дата: ${formData.date}\nВзрослых: ${formData.guests}\nДетей: ${formData.children || 0}\nСвязь: ${formData.contactMethod}\n\nКомментарий:\n${formData.comment}`,
         SOURCE_ID: 'WEB',
+        UTM_SOURCE: 'travelrusin.ru',
       },
       params: { REGISTER_SONET_EVENT: 'Y' }
     };
@@ -61,8 +67,6 @@ export const ContactForm = () => {
       setIsSubmitted(true);
     } catch (error) {
       console.error('Error submitting to CRM:', error);
-      // Even if CRM fails, we might want to show success to user and log it for MVP
-      // Wait for real business requirements to handle failure states
       setIsSubmitted(true);
     } finally {
       setIsSubmitting(false);
@@ -85,7 +89,7 @@ export const ContactForm = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-charcoal/50">Ваше имя</label>
+                <label className="text-xs font-bold uppercase tracking-wider text-charcoal/50 font-sans">Ваше имя</label>
                 <input
                   type="text"
                   name="name"
@@ -97,7 +101,7 @@ export const ContactForm = () => {
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-charcoal/50">Телефон</label>
+                <label className="text-xs font-bold uppercase tracking-wider text-charcoal/50 font-sans">Телефон / Мессенджер</label>
                 <input
                   type="tel"
                   name="phone"
@@ -110,25 +114,40 @@ export const ContactForm = () => {
               </div>
             </div>
 
-            <div className="space-y-2">
-              <label className="text-xs font-bold uppercase tracking-wider text-charcoal/50">Желаемая экскурсия</label>
-              <select 
-                name="tour"
-                value={formData.tour}
-                onChange={handleChange}
-                className="w-full px-6 py-4 bg-cream rounded-xl border border-transparent focus:border-sand focus:bg-white outline-none transition-all duration-200 h-[58px]"
-              >
-                <option>Знакомство с Алуштой</option>
-                <option>Истории Профессорского уголка</option>
-                <option>неВыдуманные истории Алушты</option>
-                <option>Рассветная набережная</option>
-                <option>Другой формат / Лекция</option>
-              </select>
-            </div>
-
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-charcoal/50">Дата</label>
+                <label className="text-xs font-bold uppercase tracking-wider text-charcoal/50 font-sans">Экскурсия</label>
+                <select 
+                  name="tour"
+                  value={formData.tour}
+                  onChange={handleChange}
+                  className="w-full px-6 py-4 bg-cream rounded-xl border border-transparent focus:border-sand focus:bg-white outline-none transition-all duration-200 h-[58px]"
+                >
+                  <option>Знакомство с Алуштой</option>
+                  <option>Истории Профессорского уголка</option>
+                  <option>неВыдуманные истории Алушты</option>
+                  <option>Рассветная набережная</option>
+                  <option>Другой формат / Лекция</option>
+                </select>
+              </div>
+              <div className="space-y-2">
+                <label className="text-xs font-bold uppercase tracking-wider text-charcoal/50 font-sans">Способ связи</label>
+                <select 
+                  name="contactMethod"
+                  value={formData.contactMethod}
+                  onChange={handleChange}
+                  className="w-full px-6 py-4 bg-cream rounded-xl border border-transparent focus:border-sand focus:bg-white outline-none transition-all duration-200 h-[58px]"
+                >
+                  <option>WhatsApp</option>
+                  <option>Telegram</option>
+                  <option>Обычный звонок</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="space-y-2">
+                <label className="text-xs font-bold uppercase tracking-wider text-charcoal/50 font-sans">Дата</label>
                 <input
                   type="date"
                   name="date"
@@ -139,54 +158,85 @@ export const ContactForm = () => {
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-charcoal/50">Количество человек</label>
+                <label className="text-xs font-bold uppercase tracking-wider text-charcoal/50 font-sans">Взрослых</label>
                 <input
                   type="number"
                   name="guests"
                   min="1"
+                  required
                   value={formData.guests}
                   onChange={handleChange}
                   placeholder="2"
                   className="w-full px-6 py-4 bg-cream rounded-xl border border-transparent focus:border-sand focus:bg-white outline-none transition-all duration-200 placeholder:text-charcoal/30"
                 />
               </div>
+              <div className="space-y-2">
+                <label className="text-xs font-bold uppercase tracking-wider text-charcoal/50 font-sans">Детей</label>
+                <input
+                  type="number"
+                  name="children"
+                  min="0"
+                  value={formData.children}
+                  onChange={handleChange}
+                  placeholder="0"
+                  className="w-full px-6 py-4 bg-cream rounded-xl border border-transparent focus:border-sand focus:bg-white outline-none transition-all duration-200 placeholder:text-charcoal/30"
+                />
+              </div>
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs font-bold uppercase tracking-wider text-charcoal/50">Комментарий или вопрос</label>
+              <label className="text-xs font-bold uppercase tracking-wider text-charcoal/50 font-sans">Комментарий или вопрос</label>
               <textarea
-                rows={4}
+                rows={3}
                 name="comment"
                 value={formData.comment}
                 onChange={handleChange}
-                placeholder="Напишите ваши пожелания..."
+                placeholder="Ваши пожелания..."
                 className="w-full px-6 py-4 bg-cream rounded-xl border border-transparent focus:border-sand focus:bg-white outline-none transition-all duration-200 placeholder:text-charcoal/30"
               />
             </div>
 
-            <label className="flex items-start gap-4 cursor-pointer group px-2">
-              <div className="relative flex items-center justify-center mt-0.5 shrink-0">
-                <input
-                  type="checkbox"
-                  required
-                  checked={isConsentAccepted}
-                  onChange={(e) => setIsConsentAccepted(e.target.checked)}
-                  className="peer appearance-none w-5 h-5 border-2 border-sand/60 rounded-md checked:bg-marine checked:border-marine transition-colors cursor-pointer"
-                />
-                <Check size={14} strokeWidth={3} className="text-white absolute opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none" />
-              </div>
-              <span className="text-xs text-charcoal/50 leading-relaxed group-hover:text-charcoal/80 transition-colors select-none">
-                Я принимаю условия оферты и согласен на обработку персональных данных. Николай свяжется с вами для подтверждения.
-              </span>
-            </label>
+            <div className="space-y-4 px-2">
+              <label className="flex items-start gap-4 cursor-pointer group">
+                <div className="relative flex items-center justify-center mt-1 shrink-0">
+                  <input
+                    type="checkbox"
+                    required
+                    checked={consentAccepted}
+                    onChange={(e) => setConsentAccepted(e.target.checked)}
+                    className="peer appearance-none w-5 h-5 border-2 border-sand/60 rounded-md checked:bg-marine checked:border-marine transition-colors cursor-pointer"
+                  />
+                  <Check size={14} strokeWidth={3} className="text-white absolute opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none" />
+                </div>
+                <span className="text-[11px] text-charcoal/50 leading-tight group-hover:text-charcoal/80 transition-colors select-none font-sans">
+                  Я даю <Link to="/legal/personal-data" className="underline hover:text-turquoise">согласие на обработку персональных данных</Link> и подтверждаю, что ознакомлен с <Link to="/legal/privacy" className="underline hover:text-turquoise">политикой конфиденциальности</Link>.
+                </span>
+              </label>
+
+              <label className="flex items-start gap-4 cursor-pointer group">
+                <div className="relative flex items-center justify-center mt-1 shrink-0">
+                  <input
+                    type="checkbox"
+                    required
+                    checked={offerAccepted}
+                    onChange={(e) => setOfferAccepted(e.target.checked)}
+                    className="peer appearance-none w-5 h-5 border-2 border-sand/60 rounded-md checked:bg-marine checked:border-marine transition-colors cursor-pointer"
+                  />
+                  <Check size={14} strokeWidth={3} className="text-white absolute opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none" />
+                </div>
+                <span className="text-[11px] text-charcoal/50 leading-tight group-hover:text-charcoal/80 transition-colors select-none font-sans">
+                  Я принимаю условия <Link to="/legal/offer" className="underline hover:text-turquoise">публичной оферты</Link> и согласен с <Link to="/legal/booking-rules" className="underline hover:text-turquoise">правилами бронирования</Link>.
+                </span>
+              </label>
+            </div>
 
             <button
               type="submit"
-              disabled={isSubmitting || !isConsentAccepted}
-              className={`w-full py-5 bg-marine text-cream rounded-2xl font-bold flex items-center justify-center gap-2 transition-all duration-300 group ${isSubmitting || !isConsentAccepted ? 'opacity-50 cursor-not-allowed' : 'hover:bg-marine/90 hover:shadow-xl hover:shadow-marine/20'}`}
+              disabled={isSubmitting || !consentAccepted || !offerAccepted}
+              className={`w-full py-5 bg-marine text-cream rounded-2xl font-bold flex items-center justify-center gap-2 transition-all duration-300 group ${isSubmitting || !consentAccepted || !offerAccepted ? 'opacity-50 cursor-not-allowed' : 'hover:bg-turquoise hover:shadow-xl hover:shadow-turquoise/20'}`}
             >
               {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
-              {!isSubmitting && <Send size={18} className={`transition-transform ${!isConsentAccepted ? '' : 'group-hover:translate-x-1 group-hover:-translate-y-1'}`} />}
+              {!isSubmitting && <Send size={18} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />}
             </button>
           </motion.form>
         ) : (

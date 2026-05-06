@@ -22,7 +22,7 @@ export const About = () => {
             <div className="lg:col-span-5 relative sticky top-32">
               <div className="aspect-[3/4] bg-sand rounded-2xl relative overflow-hidden shadow-2xl">
                 <img
-                  src="https://picsum.photos/seed/nikolayrusin_about/800/1200"
+                  src="/PHOTOS/about-nikolay-rusin.jpg"
                   alt="Николай Русин"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -60,7 +60,7 @@ export const About = () => {
                   { title: 'Проверять факты', desc: 'Красивые легенды бывают приятными, но реальная история часто интереснее.' }
                 ].map((item, idx) => (
                   <div key={idx} className="bg-white p-6 rounded-xl border border-sand/30 shadow-sm hover:shadow-md transition-shadow duration-300">
-                    <h3 className="font-bold text-charcoal mb-3">{item.title}</h3>
+                    <h3 className="text-lg font-bold text-charcoal mb-3">{item.title}</h3>
                     <p className="text-charcoal/60 text-sm leading-relaxed">{item.desc}</p>
                   </div>
                 ))}
@@ -75,7 +75,7 @@ export const About = () => {
                   </p>
                 </div>
                 <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 blur-xl">
-                  <img src="https://picsum.photos/seed/vintage/400/400" className="w-full h-full object-cover" />
+                  <img src="/PHOTOS/about-vintage-photo.jpg" className="w-full h-full object-cover" />
                 </div>
               </div>
 

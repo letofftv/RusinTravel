@@ -3,15 +3,13 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
 
 export const Hero = () => {
-  const { scrollYProgress } = useScroll();
-  const bgY = useTransform(scrollYProgress, [0, 0.3], ['0%', '15%']);
-  const textY = useTransform(scrollYProgress, [0, 0.3], ['0%', '8%']);
-
   return (
-    <section className="relative min-h-screen flex items-center pt-24 pb-20 overflow-x-hidden">
+    <section className="relative min-h-[90vh] md:min-h-screen flex items-center pt-24 pb-20 overflow-hidden">
       {/* Background Decor */}
       <motion.div
-        style={{ y: bgY }}
+        initial={{ opacity: 0, x: 100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
         className="absolute top-0 right-0 w-1/2 h-full bg-sand/10 -skew-x-12 transform origin-top-right -z-10"
       />
 
@@ -20,7 +18,6 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          style={{ y: textY }}
         >
           <div className="flex items-center gap-3 mb-6">
             <motion.span

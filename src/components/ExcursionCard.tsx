@@ -28,7 +28,7 @@ export const ExcursionCard: React.FC<ExcursionCardProps> = ({ tour }) => {
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         <div className="absolute top-4 left-4 flex flex-wrap gap-2">
           {tour.category.map((cat) => (
-            <span key={cat} className="px-3 py-1 bg-cream/90 backdrop-blur-sm text-marine text-xs font-bold uppercase tracking-wider rounded-2xl shadow-sm">
+            <span key={cat} className="px-3 py-1.5 bg-cream/95 backdrop-blur-sm text-marine text-[11px] font-sans font-bold uppercase tracking-widest rounded-full shadow-sm border border-sand/10">
               {cat}
             </span>
           ))}
@@ -41,7 +41,7 @@ export const ExcursionCard: React.FC<ExcursionCardProps> = ({ tour }) => {
       </div>
 
       <div className="p-8 flex flex-col flex-grow">
-        <Link to={`/ekskursii/${tour.slug}`} className="text-2xl font-serif text-charcoal mb-2 group-hover:text-marine transition-colors duration-300 inline-block">
+        <Link to={`/ekskursii/${tour.slug}`} className="text-3xl font-serif text-charcoal mb-2 group-hover:text-marine transition-colors duration-300 inline-block leading-tight">
           {tour.title}
         </Link>
         <p className="text-charcoal/60 text-sm mb-6 line-clamp-2 mt-2">
