@@ -102,10 +102,15 @@ export const ContactForm = () => {
                   onChange={handleChange}
                   className="w-full px-5 py-3 bg-cream rounded-xl border border-transparent focus:border-sand focus:bg-white outline-none transition-all duration-200 h-[46px] font-sans text-sm"
                 >
-                  <option>Знакомство с Алуштой</option>
+                  <option>Алушта — неизвестная история безуездного города</option>
                   <option>Истории Профессорского уголка</option>
-                  <option>неВыдуманные истории Алушты</option>
-                  <option>Рассветная набережная</option>
+                  <option>По Романовской дороге</option>
+                  <option>В гости к Раевским и Бороздиным</option>
+                  <option>Нетуристическая Алушта</option>
+                  <option>От Базарной до Нижнемечетной</option>
+                  <option>Снято в Алуште</option>
+                  <option>От Виноградной до Ленина</option>
+                  <option>Алушта и её окрестности. Истории, легенды и предания</option>
                   <option>Другой формат / Лекция</option>
                 </select>
               </div>
