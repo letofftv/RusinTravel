@@ -33,7 +33,7 @@ export const ExcursionDetail = () => {
   if (!tour) {
     return (
       <div className="py-40 text-center bg-cream min-h-[60vh] flex flex-col items-center justify-center">
-        <h1 className="text-4xl font-serif mb-6 text-charcoal">Экскурсия не найдена</h1>
+        <h1 className="text-5xl font-serif mb-8 text-charcoal">Экскурсия не найдена</h1>
         <Link to="/ekskursii" className="px-6 py-2 bg-marine text-cream rounded-2xl font-medium">К списку экскурсий</Link>
       </div>
     );
@@ -67,7 +67,7 @@ export const ExcursionDetail = () => {
                   </span>
                 ))}
               </div>
-              <h1 className="text-4xl md:text-6xl font-serif text-charcoal mb-6 leading-tight">
+              <h1 className="text-5xl md:text-7xl font-serif text-charcoal mb-8 leading-tight">
                 {tour.title}
               </h1>
               <p className="text-xl text-charcoal/70 mb-10 leading-relaxed font-serif italic">
@@ -145,12 +145,12 @@ export const ExcursionDetail = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-8">
-              <h2 className="text-3xl font-serif text-charcoal mb-8">О прогулке</h2>
+              <h2 className="text-4xl font-serif text-charcoal mb-8">О прогулке</h2>
               <div className="text-lg text-charcoal/70 leading-relaxed mb-12">
                 <p>{tour.fullDescription}</p>
               </div>
 
-              <h3 className="text-2xl font-serif text-charcoal mb-6">Что увидим на маршруте</h3>
+              <h3 className="text-3xl font-serif text-charcoal mb-8">Что увидим на маршруте</h3>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-16 border-t border-b border-sand/30 py-8">
                 {tour.highlights.map((highlight, idx) => (
                   <li key={idx} className="flex items-start gap-3 text-charcoal/80">
@@ -160,7 +160,7 @@ export const ExcursionDetail = () => {
                 ))}
               </ul>
 
-              <h3 className="text-2xl font-serif text-charcoal mb-6">Особенности</h3>
+              <h3 className="text-3xl font-serif text-charcoal mb-8">Особенности</h3>
               <div className="flex flex-wrap gap-3">
                 {tour.features.map((feature, idx) => (
                   <div key={idx} className="flex items-center gap-2 px-4 py-2 bg-cream text-charcoal text-sm font-medium rounded-lg border border-sand/50">
@@ -173,7 +173,7 @@ export const ExcursionDetail = () => {
 
             <div className="lg:col-span-4">
               <div className="sticky top-32 p-8 bg-cream rounded-xl border border-sand/50">
-                <h3 className="font-serif text-2xl text-charcoal mb-6">Организационные детали</h3>
+                <h3 className="font-serif text-3xl text-charcoal mb-8">Организационные детали</h3>
                 <div className="space-y-6">
                   {tour.features.includes('Можно с детьми') && (
                     <p className="text-sm text-charcoal/70 leading-relaxed">
@@ -200,7 +200,7 @@ export const ExcursionDetail = () => {
       <section id="booking" className="py-24 author-gradient">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-4xl md:text-5xl font-serif text-charcoal mb-6">Забронировать дату</h2>
+            <h2 className="text-5xl md:text-7xl font-serif text-charcoal mb-8">Забронировать дату</h2>
             <p className="text-charcoal/70 text-lg mb-8 leading-relaxed">
               Оставьте заявку, чтобы согласовать детали. Николай свяжется с вами и предложит доступное время для экскурсии «{tour.title}».
             </p>

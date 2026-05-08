@@ -16,7 +16,7 @@ export const ContactForm = () => {
     date: '',
     guests: '',
     children: '',
-    contactMethod: 'WhatsApp',
+    contactMethod: 'Telegram',
     comment: ''
   });
 
@@ -53,7 +53,7 @@ export const ContactForm = () => {
   };
 
   return (
-    <div className="bg-white p-8 md:p-12 rounded-2xl shadow-2xl shadow-sand/20 border border-sand/20">
+    <div className="bg-white p-6 md:p-10 rounded-2xl shadow-2xl shadow-sand/20 border border-sand/20">
       <AnimatePresence mode="wait">
         {!isSubmitted ? (
           <motion.form
@@ -62,13 +62,13 @@ export const ContactForm = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onSubmit={handleSubmit}
-            className="space-y-6"
+            className="space-y-5"
           >
-            <h3 className="text-3xl font-serif text-charcoal mb-8">Забронировать прогулку</h3>
+            <h3 className="text-3xl font-serif text-charcoal mb-6">Забронировать прогулку</h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-charcoal/50 font-sans">Ваше имя</label>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-1.5">
+                <label className="text-[10px] font-bold uppercase tracking-wider text-charcoal/40 font-sans">Ваше имя</label>
                 <input
                   type="text"
                   name="name"
@@ -76,11 +76,11 @@ export const ContactForm = () => {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Александр"
-                  className="w-full px-6 py-4 bg-cream rounded-xl border border-transparent focus:border-sand focus:bg-white outline-none transition-all duration-200 placeholder:text-charcoal/30"
+                  className="w-full px-5 py-3 bg-cream rounded-xl border border-transparent focus:border-sand focus:bg-white outline-none transition-all duration-200 placeholder:text-charcoal/20 font-sans text-sm"
                 />
               </div>
-              <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-charcoal/50 font-sans">Телефон / Мессенджер</label>
+              <div className="space-y-1.5">
+                <label className="text-[10px] font-bold uppercase tracking-wider text-charcoal/40 font-sans">Телефон / Мессенджер</label>
                 <input
                   type="tel"
                   name="phone"
@@ -88,19 +88,19 @@ export const ContactForm = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="+7 (___) ___-__-__"
-                  className="w-full px-6 py-4 bg-cream rounded-xl border border-transparent focus:border-sand focus:bg-white outline-none transition-all duration-200 placeholder:text-charcoal/30"
+                  className="w-full px-5 py-3 bg-cream rounded-xl border border-transparent focus:border-sand focus:bg-white outline-none transition-all duration-200 placeholder:text-charcoal/20 font-sans text-sm"
                 />
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-charcoal/50 font-sans">Экскурсия</label>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-1.5">
+                <label className="text-[10px] font-bold uppercase tracking-wider text-charcoal/40 font-sans">Экскурсия</label>
                 <select 
                   name="tour"
                   value={formData.tour}
                   onChange={handleChange}
-                  className="w-full px-6 py-4 bg-cream rounded-xl border border-transparent focus:border-sand focus:bg-white outline-none transition-all duration-200 h-[58px]"
+                  className="w-full px-5 py-3 bg-cream rounded-xl border border-transparent focus:border-sand focus:bg-white outline-none transition-all duration-200 h-[46px] font-sans text-sm"
                 >
                   <option>Знакомство с Алуштой</option>
                   <option>Истории Профессорского уголка</option>
@@ -109,35 +109,34 @@ export const ContactForm = () => {
                   <option>Другой формат / Лекция</option>
                 </select>
               </div>
-              <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-charcoal/50 font-sans">Способ связи</label>
+              <div className="space-y-1.5">
+                <label className="text-[10px] font-bold uppercase tracking-wider text-charcoal/40 font-sans">Способ связи</label>
                 <select 
                   name="contactMethod"
                   value={formData.contactMethod}
                   onChange={handleChange}
-                  className="w-full px-6 py-4 bg-cream rounded-xl border border-transparent focus:border-sand focus:bg-white outline-none transition-all duration-200 h-[58px]"
+                  className="w-full px-5 py-3 bg-cream rounded-xl border border-transparent focus:border-sand focus:bg-white outline-none transition-all duration-200 h-[46px] font-sans text-sm"
                 >
-                  <option>WhatsApp</option>
                   <option>Telegram</option>
                   <option>Обычный звонок</option>
                 </select>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-charcoal/50 font-sans">Дата</label>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="space-y-1.5">
+                <label className="text-[10px] font-bold uppercase tracking-wider text-charcoal/40 font-sans">Дата</label>
                 <input
                   type="date"
                   name="date"
                   required
                   value={formData.date}
                   onChange={handleChange}
-                  className="w-full px-6 py-4 bg-cream rounded-xl border border-transparent focus:border-sand focus:bg-white outline-none transition-all duration-200"
+                  className="w-full px-5 py-3 bg-cream rounded-xl border border-transparent focus:border-sand focus:bg-white outline-none transition-all duration-200 font-sans text-sm"
                 />
               </div>
-              <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-charcoal/50 font-sans">Взрослых</label>
+              <div className="space-y-1.5">
+                <label className="text-[10px] font-bold uppercase tracking-wider text-charcoal/40 font-sans">Взрослых</label>
                 <input
                   type="number"
                   name="guests"
@@ -146,11 +145,11 @@ export const ContactForm = () => {
                   value={formData.guests}
                   onChange={handleChange}
                   placeholder="2"
-                  className="w-full px-6 py-4 bg-cream rounded-xl border border-transparent focus:border-sand focus:bg-white outline-none transition-all duration-200 placeholder:text-charcoal/30"
+                  className="w-full px-5 py-3 bg-cream rounded-xl border border-transparent focus:border-sand focus:bg-white outline-none transition-all duration-200 placeholder:text-charcoal/20 font-sans text-sm"
                 />
               </div>
-              <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-charcoal/50 font-sans">Детей</label>
+              <div className="space-y-1.5">
+                <label className="text-[10px] font-bold uppercase tracking-wider text-charcoal/40 font-sans">Детей</label>
                 <input
                   type="number"
                   name="children"
@@ -158,56 +157,57 @@ export const ContactForm = () => {
                   value={formData.children}
                   onChange={handleChange}
                   placeholder="0"
-                  className="w-full px-6 py-4 bg-cream rounded-xl border border-transparent focus:border-sand focus:bg-white outline-none transition-all duration-200 placeholder:text-charcoal/30"
+                  className="w-full px-5 py-3 bg-cream rounded-xl border border-transparent focus:border-sand focus:bg-white outline-none transition-all duration-200 placeholder:text-charcoal/20 font-sans text-sm"
                 />
               </div>
             </div>
 
-            <div className="space-y-2">
-              <label className="text-xs font-bold uppercase tracking-wider text-charcoal/50 font-sans">Комментарий или вопрос</label>
+            <div className="space-y-1.5">
+              <label className="text-[10px] font-bold uppercase tracking-wider text-charcoal/40 font-sans">Комментарий или вопрос</label>
               <textarea
-                rows={3}
+                rows={2}
                 name="comment"
                 value={formData.comment}
                 onChange={handleChange}
                 placeholder="Ваши пожелания..."
-                className="w-full px-6 py-4 bg-cream rounded-xl border border-transparent focus:border-sand focus:bg-white outline-none transition-all duration-200 placeholder:text-charcoal/30"
+                className="w-full px-5 py-3 bg-cream rounded-xl border border-transparent focus:border-sand focus:bg-white outline-none transition-all duration-200 placeholder:text-charcoal/20 font-sans text-sm"
               />
             </div>
 
-            <div className="space-y-4 px-2">
-              <label className="flex items-start gap-4 cursor-pointer group">
-                <div className="relative flex items-center justify-center mt-1 shrink-0">
+            <div className="space-y-3 px-1">
+              <label className="flex items-start gap-3 cursor-pointer group">
+                <div className="relative flex items-center justify-center mt-0.5 shrink-0">
                   <input
                     type="checkbox"
                     required
                     checked={consentAccepted}
                     onChange={(e) => setConsentAccepted(e.target.checked)}
-                    className="peer appearance-none w-5 h-5 border-2 border-sand/60 rounded-md checked:bg-marine checked:border-marine transition-colors cursor-pointer"
+                    className="peer appearance-none w-4 h-4 border-2 border-sand/40 rounded-md checked:bg-marine checked:border-marine transition-colors cursor-pointer"
                   />
-                  <Check size={14} strokeWidth={3} className="text-white absolute opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none" />
+                  <Check size={12} strokeWidth={4} className="text-white absolute opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none" />
                 </div>
-                <span className="text-[11px] text-charcoal/50 leading-tight group-hover:text-charcoal/80 transition-colors select-none font-sans">
+                <span className="text-[10px] text-charcoal/40 leading-tight group-hover:text-charcoal/60 transition-colors select-none font-sans">
                   Я даю <Link to="/legal/personal-data" className="underline hover:text-turquoise">согласие на обработку персональных данных</Link> и подтверждаю, что ознакомлен с <Link to="/legal/privacy" className="underline hover:text-turquoise">политикой конфиденциальности</Link>.
                 </span>
               </label>
 
-              <label className="flex items-start gap-4 cursor-pointer group">
-                <div className="relative flex items-center justify-center mt-1 shrink-0">
+              <label className="flex items-start gap-3 cursor-pointer group">
+                <div className="relative flex items-center justify-center mt-0.5 shrink-0">
                   <input
                     type="checkbox"
                     required
                     checked={offerAccepted}
                     onChange={(e) => setOfferAccepted(e.target.checked)}
-                    className="peer appearance-none w-5 h-5 border-2 border-sand/60 rounded-md checked:bg-marine checked:border-marine transition-colors cursor-pointer"
+                    className="peer appearance-none w-4 h-4 border-2 border-sand/40 rounded-md checked:bg-marine checked:border-marine transition-colors cursor-pointer"
                   />
-                  <Check size={14} strokeWidth={3} className="text-white absolute opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none" />
+                  <Check size={12} strokeWidth={4} className="text-white absolute opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none" />
                 </div>
-                <span className="text-[11px] text-charcoal/50 leading-tight group-hover:text-charcoal/80 transition-colors select-none font-sans">
+                <span className="text-[10px] text-charcoal/40 leading-tight group-hover:text-charcoal/60 transition-colors select-none font-sans">
                   Я принимаю условия <Link to="/legal/offer" className="underline hover:text-turquoise">публичной оферты</Link> и согласен с <Link to="/legal/booking-rules" className="underline hover:text-turquoise">правилами бронирования</Link>.
                 </span>
               </label>
             </div>
+
 
             <button
               type="submit"

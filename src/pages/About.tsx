@@ -51,7 +51,7 @@ export const About = () => {
                 </p>
               </div>
 
-              <h2 className="text-3xl font-serif text-charcoal mb-8">Что важно в моих экскурсиях</h2>
+              <h2 className="text-4xl font-serif text-charcoal mb-8">Что важно в моих экскурсиях</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                 {[
                   { title: 'Не заученный текст', desc: 'Каждая группа разная. Хорошая экскурсия должна чувствовать людей.' },
@@ -69,7 +69,7 @@ export const About = () => {
               <div className="bg-charcoal text-cream rounded-2xl p-12 relative overflow-hidden mb-16">
                 <div className="relative z-10">
                   <Camera className="text-sand w-12 h-12 mb-6" />
-                  <h2 className="text-3xl font-serif mb-6">Старые фотографии как часть маршрута</h2>
+                  <h2 className="text-4xl font-serif mb-6">Старые фотографии как часть маршрута</h2>
                   <p className="text-cream/70 leading-relaxed mb-0 max-w-xl">
                     Я собираю старые фотографии, открытки и предметы, связанные с Алуштой. На экскурсиях эти материалы помогают сравнить город прошлого и настоящего. Это не музей за стеклом. Фотографию можно рассмотреть, приложить к современному виду и увидеть, как место менялось со временем.
                   </p>
@@ -80,7 +80,7 @@ export const About = () => {
               </div>
 
               <div className="border-t border-sand/40 pt-16">
-                <h2 className="text-3xl font-serif text-charcoal mb-6">Выберите прогулку по Алуште</h2>
+                <h2 className="text-4xl font-serif text-charcoal mb-6">Выберите прогулку по Алуште</h2>
                 <p className="text-charcoal/70 leading-relaxed max-w-xl mb-8">
                   Если вы хотите увидеть город внимательнее, начните с маршрутов. А если не знаете, что выбрать, просто напишите. Я подскажу формат под вашу дату, состав группы и интересы.
                 </p>

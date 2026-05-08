@@ -50,7 +50,7 @@ export const Gallery = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-6xl font-serif text-charcoal mb-6">Галерея</h1>
+            <h1 className="text-5xl md:text-7xl font-serif text-charcoal mb-8">Галерея</h1>
             <p className="text-xl text-charcoal/70 max-w-3xl leading-relaxed mb-12">
               Атмосфера маршрутов, детали старой Алушты и архивные материалы. Галерея помогает увидеть город внимательнее — через лица, дома, линии улиц и маленькие городские находки.
             </p>
@@ -95,7 +95,7 @@ export const Gallery = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
                     <span className="text-xs font-bold uppercase tracking-widest text-turquoise mb-2">{item.category}</span>
-                    <h3 className="text-xl font-serif text-white">{item.title}</h3>
+                    <h3 className="text-2xl font-serif text-white">{item.title}</h3>
                   </div>
                 </motion.div>
               ))}

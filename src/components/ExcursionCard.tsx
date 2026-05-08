@@ -41,7 +41,7 @@ export const ExcursionCard: React.FC<ExcursionCardProps> = ({ tour }) => {
       </div>
 
       <div className="p-8 flex flex-col flex-grow">
-        <Link to={`/ekskursii/${tour.slug}`} className="text-3xl font-serif text-charcoal mb-2 group-hover:text-marine transition-colors duration-300 inline-block leading-tight">
+        <Link to={`/ekskursii/${tour.slug}`} className="text-4xl font-serif text-charcoal mb-4 group-hover:text-marine transition-colors duration-300 inline-block leading-tight">
           {tour.title}
         </Link>
         <p className="text-charcoal/60 text-sm mb-6 line-clamp-2 mt-2">
