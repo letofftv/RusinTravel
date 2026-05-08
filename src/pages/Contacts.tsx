@@ -23,65 +23,63 @@ export const Contacts = () => {
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-            <div>
-              <div className="space-y-12">
-                <div className="flex items-start gap-6">
-                  <div className="w-14 h-14 bg-marine/10 flex items-center justify-center rounded-xl text-marine">
+            <div className="lg:pr-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="p-8 bg-white rounded-3xl border border-sand/20 shadow-sm hover:shadow-xl transition-all duration-500 group">
+                  <div className="w-12 h-12 bg-marine/10 flex items-center justify-center rounded-2xl text-marine mb-6 group-hover:bg-marine group-hover:text-white transition-colors duration-500">
                     <Phone size={24} />
                   </div>
-                  <div>
-                    <h4 className="font-bold text-charcoal mb-1 text-xl">Телефон / Max</h4>
-                    <a href="tel:+79787051954" className="text-charcoal/70 hover:text-marine transition-colors text-2xl font-sans font-medium">+7 (978) 705-19-54</a>
-                    <p className="text-sm text-charcoal/40 mt-1">Звонки принимаются по возможности, лучше писать в Telegram.</p>
-                  </div>
+                  <h4 className="font-sans font-bold uppercase tracking-widest text-xs text-marine mb-4">Телефон / Звонки</h4>
+                  <a href="tel:+79787051954" className="text-2xl font-sans font-bold text-charcoal hover:text-marine transition-colors block mb-2">
+                    +7 (978) 705-19-54
+                  </a>
+                  <p className="text-sm text-charcoal/40 leading-relaxed">Николай Русин. Для быстрой связи лучше использовать мессенджеры.</p>
                 </div>
 
-                <div className="flex items-start gap-6">
-                  <div className="w-14 h-14 bg-marine/10 flex items-center justify-center rounded-xl text-marine">
+                <div className="p-8 bg-white rounded-3xl border border-sand/20 shadow-sm hover:shadow-xl transition-all duration-500 group">
+                  <div className="w-12 h-12 bg-marine/10 flex items-center justify-center rounded-2xl text-marine mb-6 group-hover:bg-marine group-hover:text-white transition-colors duration-500">
                     <Send size={24} />
                   </div>
-                  <div>
-                    <h4 className="font-bold text-charcoal mb-1 text-xl">Мессенджеры</h4>
-                    <div className="flex flex-col gap-3">
-                      <a href="https://t.me/nikolay_alushta" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-charcoal/70 hover:text-marine transition-colors text-lg">
-                        <span className="font-medium">Telegram:</span>
-                        <span>@nikolay_alushta</span>
-                      </a>
-                    </div>
-                  </div>
+                  <h4 className="font-sans font-bold uppercase tracking-widest text-xs text-marine mb-4">Telegram</h4>
+                  <a href="https://t.me/nikolay_alushta" target="_blank" rel="noopener noreferrer" className="text-2xl font-sans font-bold text-charcoal hover:text-marine transition-colors block mb-2">
+                    @nikolay_alushta
+                  </a>
+                  <p className="text-sm text-charcoal/40 leading-relaxed">Напишите в Telegram — я отвечу максимально оперативно.</p>
                 </div>
 
-                <div className="flex items-start gap-6">
-                  <div className="w-14 h-14 bg-marine/10 flex items-center justify-center rounded-xl text-marine">
+                <div className="p-8 bg-white rounded-3xl border border-sand/20 shadow-sm hover:shadow-xl transition-all duration-500 group">
+                  <div className="w-12 h-12 bg-marine/10 flex items-center justify-center rounded-2xl text-marine mb-6 group-hover:bg-marine group-hover:text-white transition-colors duration-500">
                     <Mail size={24} />
                   </div>
-                  <div>
-                    <h4 className="font-bold text-charcoal mb-1 text-xl">Почта</h4>
-                    <a href="mailto:info@rusintravel.ru" className="text-charcoal/70 hover:text-marine transition-colors text-lg">info@rusintravel.ru</a>
-                  </div>
+                  <h4 className="font-sans font-bold uppercase tracking-widest text-xs text-marine mb-4">Электронная почта</h4>
+                  <a href="mailto:info@rusintravel.ru" className="text-xl font-sans font-bold text-charcoal hover:text-marine transition-colors block mb-2">
+                    info@rusintravel.ru
+                  </a>
+                  <p className="text-sm text-charcoal/40 leading-relaxed">Для официальных запросов и предложений о сотрудничестве.</p>
                 </div>
 
-                <div className="flex items-start gap-6">
-                  <div className="w-14 h-14 bg-marine/10 flex items-center justify-center rounded-xl text-marine">
+                <div className="p-8 bg-white rounded-3xl border border-sand/20 shadow-sm hover:shadow-xl transition-all duration-500 group">
+                  <div className="w-12 h-12 bg-marine/10 flex items-center justify-center rounded-2xl text-marine mb-6 group-hover:bg-marine group-hover:text-white transition-colors duration-500">
                     <MapPin size={24} />
                   </div>
-                  <div>
-                    <h4 className="font-bold text-charcoal mb-1 text-xl">Регион работы</h4>
-                    <p className="text-charcoal/70 text-lg">Алушта, Республика Крым</p>
-                    <p className="text-sm text-charcoal/40 mt-2">Точка старта каждой экскурсии обсуждается индивидуально.</p>
-                  </div>
+                  <h4 className="font-sans font-bold uppercase tracking-widest text-xs text-marine mb-4">Локация</h4>
+                  <p className="text-2xl font-sans font-bold text-charcoal mb-2">Алушта, Крым</p>
+                  <p className="text-sm text-charcoal/40 leading-relaxed">Провожу прогулки по Алуште и Южному берегу Крыма.</p>
                 </div>
               </div>
 
-              <div className="mt-20 p-10 bg-marine/5 rounded-3xl border border-marine/10">
-                <h4 className="font-serif text-2xl text-charcoal mb-6">Социальные сети</h4>
-                <div className="flex gap-4">
-                  <a href="https://vk.ru/rusin_alushta" target="_blank" rel="noopener noreferrer" className="px-8 py-3 bg-white border border-slate-200 rounded-xl text-sm font-bold text-slate-600 hover:bg-marine hover:text-white hover:border-marine transition-all">
-                    Группа VK
-                  </a>
-                  <a href="https://vk.ru/rusinick" target="_blank" rel="noopener noreferrer" className="px-8 py-3 bg-white border border-slate-200 rounded-xl text-sm font-bold text-slate-600 hover:bg-marine hover:text-white hover:border-marine transition-all">
-                    Николай VK
-                  </a>
+              <div className="mt-12 p-8 bg-charcoal rounded-[40px] text-cream relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-marine/20 rounded-full blur-3xl -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-1000" />
+                <div className="relative z-10">
+                  <h4 className="font-serif text-3xl mb-8">Николай Русин в соцсетях</h4>
+                  <div className="flex flex-wrap gap-4">
+                    <a href="https://vk.ru/rusin_alushta" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-2xl text-sm font-bold transition-all">
+                      Группа VK
+                    </a>
+                    <a href="https://vk.ru/rusinick" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-2xl text-sm font-bold transition-all">
+                      Николай VK
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

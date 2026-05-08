@@ -66,9 +66,9 @@ export const Home = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="absolute -bottom-8 -right-8 w-56 h-56 bg-cream rounded-full border-[10px] border-white flex items-center justify-center p-6 shadow-xl"
+                className="absolute -bottom-12 -right-12 bg-white/95 backdrop-blur-md p-10 rounded-3xl shadow-2xl border border-sand/20 max-w-sm z-10"
               >
-                <p className="text-sm font-serif italic text-charcoal text-center leading-relaxed">
+                <p className="text-2xl font-sans font-bold text-charcoal text-center leading-tight">
                   "Город становится интереснее, когда начинаешь замечать детали."
                 </p>
               </motion.div>
