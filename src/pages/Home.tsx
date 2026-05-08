@@ -81,7 +81,7 @@ export const Home = () => {
             variants={sectionVariants}
             className="order-1 md:order-2"
           >
-            <h2 className="text-4xl md:text-5xl font-serif text-charcoal mb-8 leading-tight">
+            <h2 className="text-4xl md:text-6xl font-serif text-charcoal mb-8 leading-tight">
               Алушта, которую обычно проходят мимо
             </h2>
             <p className="text-charcoal/70 leading-relaxed mb-4 text-balance">
@@ -208,7 +208,7 @@ export const Home = () => {
             className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16"
           >
             <div className="max-w-2xl">
-              <h2 className="text-4xl md:text-6xl font-serif text-charcoal mb-6">Выберите прогулку</h2>
+              <h2 className="text-5xl md:text-7xl font-serif text-charcoal mb-6">Выберите прогулку</h2>
               <p className="text-charcoal/60 text-lg">
                 Можно начать с обзорной прогулки по исторической Алуште, уйти в атмосферу Профессорского уголка, встретить рассвет на набережной или выбрать интерактивный маршрут, где нужно отличать реальные факты от красивых выдумок.
               </p>
@@ -237,7 +237,7 @@ export const Home = () => {
             className="flex flex-col md:flex-row justify-between items-end gap-8 mb-16"
           >
             <div>
-              <h2 className="text-4xl md:text-6xl font-serif mb-6">Город, фото и детали</h2>
+              <h2 className="text-5xl md:text-7xl font-serif mb-6">Город, фото и детали</h2>
               <p className="text-cream/50 max-w-lg">
                 Галерея маршрутов, старой Алушты и маленьких городских находок, из которых складываются прогулки.
               </p>
@@ -279,15 +279,9 @@ export const Home = () => {
       {/* Reviews */}
       <section id="reviews" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.h2
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={sectionVariants}
-            className="text-4xl md:text-5xl font-serif text-charcoal mb-16 text-center"
-          >
-            Что говорят гости
-          </motion.h2>
+            <h2 className="text-5xl md:text-7xl font-serif text-charcoal mb-16 text-center">
+              Что говорят гости
+            </h2>
 
           <motion.div
             initial="hidden"
@@ -334,7 +328,7 @@ export const Home = () => {
             variants={sectionVariants}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-serif text-charcoal mb-4">Истории Алушты</h2>
+            <h2 className="text-5xl md:text-7xl font-serif text-charcoal mb-6">Истории Алушты</h2>
             <p className="text-charcoal/50">Заметки о городе, который мы редко смотрим внимательно.</p>
           </motion.div>
 
@@ -402,7 +396,7 @@ export const Home = () => {
             viewport={{ once: true, amount: 0.3 }}
             variants={sectionVariants}
           >
-            <h2 className="text-5xl md:text-7xl font-serif text-charcoal mb-8">Хотите увидеть Алушту внимательнее?</h2>
+            <h2 className="text-5xl md:text-7xl font-serif text-charcoal mb-10 leading-tight">Хотите увидеть Алушту внимательнее?</h2>
             <p className="text-xl text-charcoal/70 mb-12 leading-relaxed">
               Напишите мне, и я подскажу, какая прогулка лучше подойдёт под вашу дату, состав группы и настроение.
             </p>

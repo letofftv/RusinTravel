@@ -29,7 +29,7 @@ export const Excursions = () => {
 
       <section className="pt-32 pb-16 bg-cream border-b border-sand/30">
         <div className="max-w-7xl mx-auto px-6">
-          <h1 className="text-4xl md:text-6xl font-serif text-charcoal mb-6">Экскурсии по Алуште и Южному берегу</h1>
+          <h1 className="text-5xl md:text-7xl font-serif text-charcoal mb-8">Экскурсии по Алуште и Южному берегу</h1>
           <p className="text-xl text-charcoal/70 max-w-3xl leading-relaxed mb-12">
             Выберите маршрут под свой ритм: спокойное знакомство с Алуштой, прогулку по Профессорскому уголку, рассвет на набережной, интерактивную игру с городскими историями или формат для школьной группы.
           </p>
@@ -61,7 +61,7 @@ export const Excursions = () => {
 
       <section className="py-24 author-gradient">
         <div className="max-w-7xl mx-auto px-6 text-center max-w-3xl">
-          <h2 className="text-3xl md:text-4xl font-serif text-charcoal mb-6">Не знаете, что выбрать?</h2>
+          <h2 className="text-4xl md:text-5xl font-serif text-charcoal mb-8">Не знаете, что выбрать?</h2>
           <p className="text-lg text-charcoal/70 leading-relaxed mb-10">
             Если вы впервые в Алуште, начните со «Знакомства с Алуштой». Если хочется атмосферы старых дач и курортной истории, выбирайте Профессорский уголок. Если вы уже были на обычных маршрутах, обратите внимание на «Нетуристическую Алушту».
           </p>
