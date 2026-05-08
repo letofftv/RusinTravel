@@ -6,6 +6,12 @@ import { Clock, Users, Tag, MapPin, ChevronLeft, Check } from 'lucide-react';
 import { ContactForm } from '../components/ContactForm';
 import { motion } from 'motion/react';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 export const ExcursionDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const { tours, isLoading } = useData();
@@ -32,6 +38,8 @@ export const ExcursionDetail = () => {
       </div>
     );
   }
+
+  const sliderImages = tour.gallery && tour.gallery.length > 0 ? tour.gallery : [tour.imageUrl];
 
   return (
     <>
@@ -107,13 +115,25 @@ export const ExcursionDetail = () => {
 
             <div className="order-1 lg:order-2">
               <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl shadow-charcoal/15 relative">
-                <img 
-                  src={tour.imageUrl} 
-                  alt={tour.title}
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 border-[8px] border-cream/15 rounded-2xl pointer-events-none" />
+                <Swiper
+                  modules={[Navigation, Pagination, Autoplay]}
+                  navigation
+                  pagination={{ clickable: true }}
+                  autoplay={{ delay: 5000 }}
+                  className="w-full h-full"
+                >
+                  {sliderImages.map((img, index) => (
+                    <SwiperSlide key={index}>
+                      <img 
+                        src={img} 
+                        alt={`${tour.title} - фото ${index + 1}`}
+                        className="w-full h-full object-cover"
+                        referrerPolicy="no-referrer"
+                      />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+                <div className="absolute inset-0 border-[8px] border-cream/15 rounded-2xl pointer-events-none z-10" />
               </div>
             </div>
           </div>
