@@ -3,16 +3,26 @@ import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'motion/react';
 
 const galleryItems = [
-  { id: 1, src: '/PHOTOS/tour-znakomstvo-s-alushtoy.jpg', category: 'Маршруты', title: 'Знакомство с Алуштой' },
-  { id: 2, src: '/PHOTOS/tour-professorskiy-ugolok.jpg', category: 'Архитектура', title: 'Профессорский уголок' },
-  { id: 3, src: '/PHOTOS/about-vintage-photo.jpg', category: 'Старая Алушта', title: 'Детали истории' },
-  { id: 4, src: '/PHOTOS/tour-rassvetnaya-naberezhnaya.jpg', category: 'Маршруты', title: 'Рассвет у моря' },
-  { id: 5, src: '/PHOTOS/tour-bezuezdnyy-gorod.jpg', category: 'Архитектура', title: 'Старые виллы' },
-  { id: 6, src: '/PHOTOS/tour-ne-vydumannye-istorii.jpg', category: 'Артефакты', title: 'Городские находки' },
-  { id: 7, src: '/PHOTOS/blog-odna-staraya-fotografiya.jpg', category: 'Старая Алушта', title: 'Архивные кадры' },
-  { id: 8, src: '/PHOTOS/tour-kraevedcheskaya-veloprogulka.jpg', category: 'Маршруты', title: 'Велопрогулка' },
-  { id: 9, src: '/PHOTOS/tour-alushta-v-kino.jpg', category: 'Маршруты', title: 'Места съёмок' },
+  { id: 1, src: '/PHOTOS/DSC_5489.jpg', category: 'Архитектура', title: 'Старинные фасады' },
+  { id: 2, src: '/PHOTOS/DSC_5490.jpg', category: 'Архитектура', title: 'Детали города' },
+  { id: 3, src: '/PHOTOS/DSC_5493.jpg', category: 'Старая Алушта', title: 'Исторический центр' },
+  { id: 4, src: '/PHOTOS/DSC_5495.jpg', category: 'Архитектура', title: 'Улицы Алушты' },
+  { id: 5, src: '/PHOTOS/DSC_5496.jpg', category: 'Архитектура', title: 'Городская среда' },
+  { id: 6, src: '/PHOTOS/DSC_5497.jpg', category: 'Старая Алушта', title: 'Уголки прошлого' },
+  { id: 7, src: '/PHOTOS/DSC_5502.jpg', category: 'Архитектура', title: 'Резные детали' },
+  { id: 8, src: '/PHOTOS/DSC_5522.jpg', category: 'Архитектура', title: 'Виллы' },
+  { id: 9, src: '/PHOTOS/DSC_5525.jpg', category: 'Архитектура', title: 'Дворец Гагариной' },
+  { id: 10, src: '/PHOTOS/IMG_3395.JPG', category: 'Маршруты', title: 'Горные тропы' },
+  { id: 11, src: '/PHOTOS/IMG_6842.jpg', category: 'Маршруты', title: 'Панорамы Крыма' },
+  { id: 12, src: '/PHOTOS/IMG_6848.JPG', category: 'Маршруты', title: 'Дорога в горах' },
+  { id: 13, src: '/PHOTOS/IMG_7845.jpg', category: 'Маршруты', title: 'Виды с высоты' },
+  { id: 14, src: '/PHOTOS/IMG_8239.JPG', category: 'Маршруты', title: 'Романовское шоссе' },
+  { id: 15, src: '/PHOTOS/IMG_8240.JPG', category: 'Архитектура', title: 'Утес и Карасан' },
+  { id: 16, src: '/PHOTOS/IMG_8257.JPG', category: 'Маршруты', title: 'Морское побережье' },
+  { id: 17, src: '/PHOTOS/photo_2022-08-03_21-08-54.jpg', category: 'Архитектура', title: 'Дом на Ленина' },
+  { id: 18, src: '/PHOTOS/DSC_5862.JPG', category: 'Архитектура', title: 'Башня Алустон' },
 ];
+
 
 export const Gallery = () => {
   const [filter, setFilter] = useState('Все');
