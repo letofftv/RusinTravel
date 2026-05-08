@@ -79,7 +79,7 @@ export const Header = () => {
                   <Link
                     key={link.name}
                     to={link.href}
-                    className={`text-xl font-serif transition-colors duration-300 ${
+                    className={`text-xl font-sans font-bold transition-colors duration-300 ${
                       isActive ? 'text-turquoise' : 'text-charcoal'
                     }`}
                     onClick={() => setIsOpen(false)}
