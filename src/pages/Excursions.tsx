@@ -36,11 +36,11 @@ export const Excursions = () => {
 
           {/* Simple filter UI placeholder */}
           <div className="flex flex-wrap gap-3 mb-8">
-            {['Все', 'Индивидуальные', 'Сборные', 'Семейные', 'Детские и школьные', 'Сезонные', 'Пешеходные', 'Велоформат', 'Лекции и встречи'].map((filter, i) => (
+            {['Все', 'Индивидуальные', 'Пешеходные', 'Автомобильные'].map((filter, i) => (
               <button 
                 key={i} 
                 onClick={() => setActiveFilter(filter)}
-                className={`px-5 py-2 rounded-2xl text-sm font-medium transition-colors ${activeFilter === filter ? 'bg-charcoal text-cream' : 'border border-sand text-charcoal hover:bg-sand'}`}
+                className={`px-6 py-2 rounded-2xl text-xs font-bold uppercase tracking-widest transition-all duration-300 ${activeFilter === filter ? 'bg-marine text-cream shadow-lg shadow-marine/20' : 'bg-white text-charcoal/50 hover:bg-sand/20 border border-sand/30'}`}
               >
                 {filter}
               </button>

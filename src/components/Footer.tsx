@@ -46,7 +46,7 @@ export const Footer = () => {
                 <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-turquoise group-hover:text-charcoal transition-all">
                   <Phone size={14} />
                 </div>
-                <span className="text-sm font-medium">+7 (978) 705-19-54</span>
+                <span className="text-sm font-bold font-sans">+7 (978) 705-19-54</span>
               </a>
               
               <div className="flex gap-3">

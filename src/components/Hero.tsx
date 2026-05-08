@@ -109,16 +109,16 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 30, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ delay: 0.9, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-sm p-6 rounded-xl shadow-xl max-w-[240px] border border-sand/20"
+            className="absolute -bottom-10 -left-10 bg-white/95 backdrop-blur-md p-8 rounded-2xl shadow-2xl max-w-[320px] border border-sand/20 z-20"
           >
-            <p className="text-base font-serif italic text-charcoal mb-4">
+            <p className="text-xl font-sans font-bold text-charcoal mb-6 leading-tight">
               "Алушта раскрывается не как набор точек на карте, а как живая история."
             </p>
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-marine flex items-center justify-center text-white text-[10px] font-bold">НР</div>
+            <div className="flex items-center gap-4 border-t border-sand/30 pt-6">
+              <div className="w-10 h-10 rounded-full bg-marine flex items-center justify-center text-white text-xs font-bold shadow-lg shadow-marine/20">НР</div>
               <div>
-                <p className="text-xs font-bold">Николай Русин</p>
-                <p className="text-xs text-charcoal/50">Ваш экскурсовод</p>
+                <p className="text-sm font-bold text-charcoal">Николай Русин</p>
+                <p className="text-xs text-charcoal/50 font-sans uppercase tracking-widest">Ваш экскурсовод</p>
               </div>
             </div>
           </motion.div>

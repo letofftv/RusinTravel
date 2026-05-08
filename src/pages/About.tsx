@@ -28,6 +28,16 @@ export const About = () => {
                   referrerPolicy="no-referrer"
                 />
               </div>
+              <motion.div
+                initial={{ opacity: 0, x: -30, scale: 0.9 }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
+                transition={{ delay: 0.6, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                className="absolute -bottom-8 -right-8 bg-white/95 backdrop-blur-md p-8 rounded-2xl shadow-2xl border border-sand/20 z-20 max-w-[280px]"
+              >
+                <p className="text-lg font-sans font-bold text-charcoal leading-tight">
+                  "История — это не даты, а люди и их поступки."
+                </p>
+              </motion.div>
             </div>
 
             <div className="lg:col-span-7 pt-4">

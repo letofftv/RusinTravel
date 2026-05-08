@@ -49,11 +49,15 @@
 
 @layer base {
   body {
-    @apply bg-cream text-charcoal font-sans antialiased;
+    @apply bg-cream text-charcoal font-sans antialiased leading-relaxed;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif font-medium;
+    @apply font-serif font-medium leading-tight tracking-tight;
+  }
+  
+  button, input, textarea, select, a {
+    @apply font-sans;
   }
 
   /* Smooth scroll globally */
