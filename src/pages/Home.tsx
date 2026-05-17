@@ -42,88 +42,24 @@ export const Home = () => {
       
       <Hero />
 
-      {/* Philosophy / Intro */}
-      <section className="py-24 bg-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+      {/* Philosophy / Sub-hero */}
+      <section className="py-16 bg-white">
+        <div className="max-w-3xl mx-auto px-6 text-center">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={sectionVariants}
-            className="order-2 md:order-1"
           >
-            <div className="relative mb-12 lg:mb-0 lg:pr-8">
-              <div className="aspect-square rounded-2xl overflow-hidden">
-                <img
-                  src="/PHOTOS/about-vintage-photo.jpg"
-                  alt="Детали Алушты"
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="absolute -bottom-12 -right-12 bg-white/95 backdrop-blur-md p-10 rounded-3xl shadow-2xl border border-sand/20 max-w-sm z-10"
-              >
-                <p className="text-2xl font-sans font-bold text-charcoal text-center leading-tight">
-                  "Город становится интереснее, когда начинаешь замечать детали."
-                </p>
-              </motion.div>
-            </div>
-          </motion.div>
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={sectionVariants}
-            className="order-1 md:order-2"
-          >
-            <h2 className="text-4xl md:text-6xl font-serif text-charcoal mb-8 leading-tight">
+            <h2 className="text-3xl md:text-5xl font-serif text-charcoal mb-6 leading-tight">
               Алушта, которую обычно проходят мимо
             </h2>
-            <p className="text-charcoal/70 leading-relaxed mb-4 text-balance">
-              На первый взгляд Алушта проста: пляж, набережная, горы на горизонте. Но у города есть второй слой. Его видно в старых дачах, неожиданных фамилиях, дореволюционной архитектуре, следах киногрупп, забытых фонтанах и улицах, где история не висит на табличке, а прячется в деталях.
+            <p className="text-charcoal/70 leading-relaxed mb-8 text-lg text-balance">
+              У города есть второй слой — старые дачи, неожиданные фамилии, дореволюционная архитектура, следы киногрупп. На прогулках с Николаем Русиным город раскрывается как живая история, без заученного текста и беготни по пунктам.
             </p>
-            <p className="text-charcoal/70 leading-relaxed mb-8 text-balance">
-              На прогулках с Николаем Русиным город раскрывается не как набор достопримечательностей, а как живая история. Без заученного текста, без сухого перечисления дат, без беготни по пунктам.
-            </p>
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-              className="space-y-5"
-            >
-              {[
-                { title: 'Истории вместо сухой лекции', desc: 'Николай рассказывает не только о датах и зданиях, а о людях, решениях, случайностях и городских деталях, которые обычно остаются за кадром.' },
-                { title: 'Старые фото на маршруте', desc: 'Архивные снимки помогают увидеть, как менялась Алушта. Иногда достаточно одной фотографии, чтобы знакомое место стало совсем другим.' },
-                { title: 'Взгляд местного жителя', desc: 'Николай родился и вырос в Алуште. Поэтому его маршруты не про «посмотрите направо», а про город, который он знает изнутри.' },
-                { title: 'Спокойный темп', desc: 'Здесь не нужно бежать за группой. Можно рассматривать, задавать вопросы и замечать то, что обычно пропускают.' },
-                { title: 'Для туристов и местных', desc: 'На этих прогулках интересно и тем, кто приехал впервые, и тем, кто живёт рядом, но хочет увидеть знакомые улицы внимательнее.' }
-              ].map((item, i) => (
-                <motion.div key={i} variants={childVariants} className="flex gap-4">
-                  <div className="w-1.5 h-1.5 bg-marine rounded-full mt-2 shrink-0" />
-                  <div>
-                    <h4 className="text-lg font-bold text-charcoal mb-1">{item.title}</h4>
-                    <p className="text-sm text-charcoal/60 leading-relaxed">{item.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={sectionVariants}
-              className="mt-10"
-            >
-              <Link to="/ekskursii" className="inline-block px-6 py-3 border border-charcoal text-charcoal hover:bg-charcoal hover:text-cream rounded-2xl text-sm font-medium transition-all duration-300">
-                Узнать больше о прогулках
-              </Link>
-            </motion.div>
+            <Link to="/ekskursii" className="inline-block px-6 py-3 border border-charcoal text-charcoal hover:bg-charcoal hover:text-cream rounded-2xl text-sm font-medium transition-all duration-300">
+              Узнать больше о прогулках
+            </Link>
           </motion.div>
         </div>
       </section>

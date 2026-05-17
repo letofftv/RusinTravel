@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Send, Phone } from 'lucide-react';
+import { Phone } from 'lucide-react';
 import { MonogramLogo } from './MonogramLogo';
 
 export const Footer = () => {
@@ -48,12 +48,14 @@ export const Footer = () => {
                 </div>
                 <span className="text-sm font-bold font-sans">+7 (978) 705-19-54</span>
               </a>
-              
+
               <div className="flex gap-3">
-                <a href="https://t.me/nikolay_alushta" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center hover:bg-[#0088cc] hover:text-white transition-all" title="Telegram">
-                  <Send size={20} />
-                </a>
                 <a href="https://vk.ru/rusin_alushta" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center hover:bg-[#0077FF] hover:text-white transition-all" title="Группа ВКонтакте">
+                  <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.162 18.994c-6.028 0-9.47-4.128-9.613-10.994h3.018c.099 5.04 2.321 7.175 4.085 7.615v-7.615h2.839v4.351c1.737-.186 3.562-2.146 4.177-4.351h2.839c-.454 2.714-2.459 4.674-3.896 5.508 1.437.834 3.753 2.518 4.614 5.486h-3.111c-.672-2.1-2.355-3.722-4.614-3.946v3.946h-.338z"/>
+                  </svg>
+                </a>
+                <a href="https://vk.ru/rusinick" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center hover:bg-[#0077FF] hover:text-white transition-all" title="Личная страница ВКонтакте">
                   <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg">
                     <path d="M13.162 18.994c-6.028 0-9.47-4.128-9.613-10.994h3.018c.099 5.04 2.321 7.175 4.085 7.615v-7.615h2.839v4.351c1.737-.186 3.562-2.146 4.177-4.351h2.839c-.454 2.714-2.459 4.674-3.896 5.508 1.437.834 3.753 2.518 4.614 5.486h-3.111c-.672-2.1-2.355-3.722-4.614-3.946v3.946h-.338z"/>
                   </svg>
@@ -61,8 +63,8 @@ export const Footer = () => {
               </div>
             </div>
             <div className="space-y-1 text-[10px] opacity-30 font-sans uppercase tracking-widest">
-              <p>Самозанятый Русин Н.Н.</p>
-              <p>ИНН: 910101010101</p>
+              <p>Самозанятый Русин Н.Н. / НПД</p>
+              <p>Бейдж экскурсовода: уточняется</p>
             </div>
           </div>
         </div>
