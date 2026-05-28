@@ -1,0 +1,16 @@
+# Защита конфигурационных и вспомогательных файлов
+<Files "config.php">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "guard.php">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Директория bitrix — только client.php (подключается через require_once)
+<FilesMatch "client\.php$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

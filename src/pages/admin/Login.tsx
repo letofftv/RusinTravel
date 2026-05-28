@@ -16,17 +16,26 @@ export const AdminLogin = () => {
     setIsLoading(true);
     setError('');
 
-    // For now, a very simple mock check
-    // In production, this would be a Supabase auth call or an API call
-    setTimeout(() => {
-      if (password === 'admin123') { // Temporary mock password
-        localStorage.setItem('admin_session', 'true');
+    try {
+      const response = await fetch('/api/auth.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ action: 'login', password }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
         navigate('/admin');
       } else {
-        setError('Неверный пароль');
-        setIsLoading(false);
+        setError(data.message || 'Неверный пароль');
       }
-    }, 800);
+    } catch {
+      setError('Ошибка соединения с сервером');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (

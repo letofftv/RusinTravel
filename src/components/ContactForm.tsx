@@ -33,10 +33,13 @@ export const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/lead', {
+      const response = await fetch('/api/lead.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          ...formData,
+          sourcePage: window.location.href,
+        }),
       });
       
       if (!response.ok) throw new Error('Network response was not ok');

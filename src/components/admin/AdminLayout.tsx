@@ -28,9 +28,13 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
     { name: 'Настройки', icon: Settings, path: '/admin/settings' },
   ];
 
-  const handleLogout = () => {
-    // Logic for logout
-    localStorage.removeItem('admin_session');
+  const handleLogout = async () => {
+    await fetch('/api/auth.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      body: JSON.stringify({ action: 'logout' }),
+    }).catch(() => {});
     navigate('/admin/login');
   };
 
