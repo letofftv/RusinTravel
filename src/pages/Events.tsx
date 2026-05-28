@@ -23,7 +23,7 @@ export const Events = () => {
   return (
     <>
       <Helmet>
-        <title>События и афиша экскурсий | Николай Русин</title>
+        <title>Афиша экскурсий | Николай Русин</title>
         <meta name="description" content="Расписание групповых прогулок, кинопоказов и тематических встреч в Алуште. Выбирайте дату и бронируйте места онлайн." />
       </Helmet>
 
@@ -34,7 +34,7 @@ export const Events = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-6xl font-serif text-charcoal mb-6">События и афиша</h1>
+            <h1 className="text-4xl md:text-6xl font-serif text-charcoal mb-6">Афиша</h1>
             <p className="text-xl text-charcoal/70 max-w-3xl leading-relaxed">
               Здесь собраны прогулки в составе сборных групп, тематические встречи, кинопоказы и специальные форматы на конкретные даты. 
               Индивидуальные экскурсии можно забронировать на любую свободную дату через каталог.

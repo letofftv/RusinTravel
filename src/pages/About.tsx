@@ -4,6 +4,19 @@ import { Link } from 'react-router-dom';
 import { Camera } from 'lucide-react';
 import { motion } from 'motion/react';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+const aboutSlides = [
+  { src: '/PHOTOS/about-nikolay-rusin.jpg', caption: 'Николай Русин' },
+  { src: '/PHOTOS/DSC_5844.JPG', caption: 'На маршруте с группой' },
+  { src: '/PHOTOS/DSC_5904.JPG', caption: 'Исторический Алушта' },
+  { src: '/PHOTOS/about-vintage-photo.jpg', caption: 'Архивные материалы' },
+];
+
 export const About = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -21,12 +34,23 @@ export const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             <div className="lg:col-span-5 relative sticky top-32">
               <div className="aspect-[3/4] bg-sand rounded-2xl relative overflow-hidden shadow-2xl">
-                <img
-                  src="/PHOTOS/about-nikolay-rusin.jpg"
-                  alt="Николай Русин"
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
+                <Swiper
+                  modules={[Navigation, Pagination]}
+                  navigation
+                  pagination={{ clickable: true }}
+                  className="w-full h-full"
+                >
+                  {aboutSlides.map((slide, idx) => (
+                    <SwiperSlide key={idx}>
+                      <img
+                        src={slide.src}
+                        alt={slide.caption}
+                        className="w-full h-full object-cover"
+                        referrerPolicy="no-referrer"
+                      />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
               </div>
               <motion.div
                 initial={{ opacity: 0, x: -30, scale: 0.9 }}

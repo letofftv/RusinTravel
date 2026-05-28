@@ -87,7 +87,7 @@ export interface GalleryItem {
   id: string;
   title: string;
   caption?: string;
-  category: 'routes' | 'old-alushta' | 'architecture' | 'artifacts' | 'before-after';
+  category: 'routes' | 'old-alushta' | 'architecture' | 'artifacts' | 'achievements' | 'before-after';
   imageUrl: string;
   thumbUrl?: string;
   alt: string;

@@ -22,7 +22,7 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
 
   const menuItems = [
     { name: 'Дашборд', icon: LayoutDashboard, path: '/admin' },
-    { name: 'События', icon: Calendar, path: '/admin/events' },
+    { name: 'Афиша', icon: Calendar, path: '/admin/events' },
     { name: 'Экскурсии', icon: Map, path: '/admin/tours' },
     { name: 'Блог', icon: FileText, path: '/admin/blog' },
     { name: 'Настройки', icon: Settings, path: '/admin/settings' },

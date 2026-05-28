@@ -1,6 +1,6 @@
 import React from 'react';
 import { Clock, Users, Tag, ChevronRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Tour } from '../types';
 
@@ -9,6 +9,8 @@ interface ExcursionCardProps {
 }
 
 export const ExcursionCard: React.FC<ExcursionCardProps> = ({ tour }) => {
+  const navigate = useNavigate();
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -16,7 +18,8 @@ export const ExcursionCard: React.FC<ExcursionCardProps> = ({ tour }) => {
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       whileHover={{ y: -4 }}
-      className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col group h-full border border-sand/20"
+      onClick={() => navigate(`/ekskursii/${tour.slug}`)}
+      className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col group h-full border border-sand/20 cursor-pointer"
     >
       <div className="relative h-64 overflow-hidden">
         <img
@@ -41,9 +44,9 @@ export const ExcursionCard: React.FC<ExcursionCardProps> = ({ tour }) => {
       </div>
 
       <div className="p-8 flex flex-col flex-grow">
-        <Link to={`/ekskursii/${tour.slug}`} className="text-4xl font-serif text-charcoal mb-4 group-hover:text-marine transition-colors duration-300 inline-block leading-tight">
+        <span className="text-4xl font-serif text-charcoal mb-4 group-hover:text-marine transition-colors duration-300 leading-tight block">
           {tour.title}
-        </Link>
+        </span>
         <p className="text-charcoal/60 text-sm mb-6 line-clamp-2 mt-2">
           {tour.shortDescription}
         </p>
@@ -64,11 +67,15 @@ export const ExcursionCard: React.FC<ExcursionCardProps> = ({ tour }) => {
         </div>
 
         <div className="flex items-center justify-between pt-6 border-t border-sand/20">
-          <Link to={`/ekskursii/${tour.slug}`} className="text-marine font-medium text-sm flex items-center gap-1 group/btn hover:gap-2 transition-all duration-300">
+          <span className="text-marine font-medium text-sm flex items-center gap-1 group-hover:gap-2 transition-all duration-300">
             Подробнее
             <ChevronRight size={16} className="transition-transform duration-300" />
-          </Link>
-          <Link to={`/kontakty?tour=${tour.slug}`} className="bg-sand hover:bg-marine hover:text-cream px-4 py-2 rounded-2xl text-charcoal text-sm font-medium transition-all duration-300 inline-block">
+          </span>
+          <Link
+            to={`/kontakty?tour=${tour.slug}`}
+            onClick={(e) => e.stopPropagation()}
+            className="bg-sand hover:bg-marine hover:text-cream px-4 py-2 rounded-2xl text-charcoal text-sm font-medium transition-all duration-300 inline-block"
+          >
             Забронировать
           </Link>
         </div>

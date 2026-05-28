@@ -20,6 +20,7 @@ export const Header = () => {
   const navLinks = [
     { name: 'Обо мне', href: '/obo-mne' },
     { name: 'Экскурсии', href: '/ekskursii' },
+    { name: 'Афиша', href: '/events' },
     { name: 'Галерея', href: '/galereya' },
     { name: 'Блог', href: '/blog' },
     { name: 'Контакты', href: '/kontakty' },

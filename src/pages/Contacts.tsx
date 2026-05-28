@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { ContactForm } from '../components/ContactForm';
-import { Phone, MapPin } from 'lucide-react';
+import { Phone, MapPin, Mail, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const Contacts = () => {
   useEffect(() => {
@@ -46,7 +47,18 @@ export const Contacts = () => {
                 </div>
               </div>
 
-              <div className="p-6 bg-charcoal rounded-2xl text-cream relative overflow-hidden group">
+              {/* Email */}
+              <div className="p-6 bg-white rounded-2xl border border-sand/20 shadow-sm hover:shadow-lg transition-all duration-500 group">
+                <div className="w-10 h-10 bg-marine/10 flex items-center justify-center rounded-xl text-marine mb-4 group-hover:bg-marine group-hover:text-white transition-colors duration-500">
+                  <Mail size={20} />
+                </div>
+                <h4 className="font-sans font-bold uppercase tracking-widest text-[11px] text-marine mb-3">Email</h4>
+                <p className="text-base font-sans font-bold text-charcoal mb-1.5">Уточняется</p>
+                <p className="text-xs text-charcoal/40 leading-relaxed">Электронный адрес будет указан позже.</p>
+              </div>
+
+              {/* Соцсети */}
+              <div className="p-6 bg-charcoal rounded-2xl text-cream relative overflow-hidden group col-span-1 sm:col-span-2">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-marine/20 rounded-full blur-3xl -mr-12 -mt-12 group-hover:scale-150 transition-transform duration-1000" />
                 <div className="relative z-10">
                   <h4 className="font-serif text-xl mb-5">Николай Русин в соцсетях</h4>
@@ -64,6 +76,50 @@ export const Contacts = () => {
                       Личная страница
                     </a>
                   </div>
+                </div>
+              </div>
+
+              {/* QR MAX */}
+              <div className="p-6 bg-white rounded-2xl border border-sand/20 shadow-sm col-span-1 sm:col-span-2">
+                <h4 className="font-sans font-bold uppercase tracking-widest text-[11px] text-marine mb-4">Написать в MAX</h4>
+                <div className="flex items-center gap-6">
+                  <div className="w-24 h-24 bg-cream rounded-xl flex items-center justify-center border border-sand/30 shrink-0 text-charcoal/30 text-xs text-center font-medium leading-snug p-2">
+                    QR<br/>MAX<br/><span className="text-[9px]">скоро</span>
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-charcoal mb-1">MAX (Mail.ru)</p>
+                    <p className="text-xs text-charcoal/50 leading-relaxed max-w-xs">
+                      Отсканируйте QR-код, чтобы написать Николаю напрямую в мессенджер MAX.
+                    </p>
+                    <a
+                      href="tel:+79787051954"
+                      className="inline-flex items-center gap-1 mt-3 text-xs font-bold text-marine hover:text-turquoise transition-colors"
+                    >
+                      +7 (978) 705-19-54
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Юридическая информация */}
+              <div className="p-6 bg-cream/60 rounded-2xl border border-sand/30 col-span-1 sm:col-span-2">
+                <h4 className="font-sans font-bold uppercase tracking-widest text-[11px] text-charcoal/50 mb-4">Юридическая информация</h4>
+                <div className="flex flex-wrap gap-3">
+                  {[
+                    { label: 'Политика конфиденциальности', href: '/privacy' },
+                    { label: 'Публичная оферта', href: '/offer' },
+                    { label: 'Обработка персональных данных', href: '/personal-data' },
+                    { label: 'Правила бронирования', href: '/booking-rules' },
+                  ].map((doc) => (
+                    <Link
+                      key={doc.href}
+                      to={doc.href}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white rounded-xl text-xs text-charcoal/60 hover:text-marine hover:shadow-sm border border-sand/20 transition-all"
+                    >
+                      <ExternalLink size={11} />
+                      {doc.label}
+                    </Link>
+                  ))}
                 </div>
               </div>
             </div>

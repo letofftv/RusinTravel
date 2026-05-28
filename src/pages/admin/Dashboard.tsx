@@ -108,8 +108,8 @@ export const AdminDashboard = () => {
           <div className="space-y-4">
             <button className="w-full p-4 bg-slate-50 hover:bg-turquoise hover:text-charcoal rounded-2xl text-left transition-all group flex items-center justify-between">
               <div>
-                <p className="font-bold text-sm">Добавить событие</p>
-                <p className="text-xs text-slate-400 group-hover:text-charcoal/50">Создать новую афишу</p>
+                <p className="font-bold text-sm">Добавить в афишу</p>
+                <p className="text-xs text-slate-400 group-hover:text-charcoal/50">Создать новое мероприятие</p>
               </div>
               <Calendar size={20} className="text-slate-300 group-hover:text-charcoal" />
             </button>

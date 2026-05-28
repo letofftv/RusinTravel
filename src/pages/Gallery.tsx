@@ -13,20 +13,21 @@ const galleryItems = [
   { id: 8, src: '/PHOTOS/DSC_5522.jpg', category: 'Архитектура', title: 'Виллы' },
   { id: 9, src: '/PHOTOS/DSC_5525.jpg', category: 'Архитектура', title: 'Дворец Гагариной' },
   { id: 10, src: '/PHOTOS/IMG_3395.JPG', category: 'Маршруты', title: 'Горные тропы' },
-  { id: 11, src: '/PHOTOS/IMG_6842.jpg', category: 'Маршруты', title: 'Панорамы Крыма' },
-  { id: 12, src: '/PHOTOS/IMG_6848.JPG', category: 'Маршруты', title: 'Дорога в горах' },
-  { id: 13, src: '/PHOTOS/IMG_7845.jpg', category: 'Маршруты', title: 'Виды с высоты' },
-  { id: 14, src: '/PHOTOS/IMG_8239.JPG', category: 'Маршруты', title: 'Романовское шоссе' },
-  { id: 15, src: '/PHOTOS/IMG_8240.JPG', category: 'Архитектура', title: 'Утес и Карасан' },
-  { id: 16, src: '/PHOTOS/IMG_8257.JPG', category: 'Маршруты', title: 'Морское побережье' },
-  { id: 17, src: '/PHOTOS/photo_2022-08-03_21-08-54.jpg', category: 'Архитектура', title: 'Дом на Ленина' },
-  { id: 18, src: '/PHOTOS/DSC_5862.JPG', category: 'Архитектура', title: 'Башня Алустон' },
+  { id: 11, src: '/PHOTOS/IMG_6842.jpg', category: 'Достижения', title: 'Диплом экскурсовода' },
+  { id: 12, src: '/PHOTOS/IMG_6848.JPG', category: 'Достижения', title: 'Аттестация' },
+  { id: 13, src: '/PHOTOS/IMG_6849.JPG', category: 'Достижения', title: 'Сертификат' },
+  { id: 14, src: '/PHOTOS/IMG_7845.jpg', category: 'Маршруты', title: 'Виды с высоты' },
+  { id: 15, src: '/PHOTOS/IMG_8239.JPG', category: 'Маршруты', title: 'Романовское шоссе' },
+  { id: 16, src: '/PHOTOS/IMG_8240.JPG', category: 'Архитектура', title: 'Утес и Карасан' },
+  { id: 17, src: '/PHOTOS/IMG_8257.JPG', category: 'Маршруты', title: 'Морское побережье' },
+  { id: 18, src: '/PHOTOS/photo_2022-08-03_21-08-54.jpg', category: 'Архитектура', title: 'Дом на Ленина' },
+  { id: 19, src: '/PHOTOS/DSC_5862.JPG', category: 'Архитектура', title: 'Башня Алустон' },
 ];
 
 
 export const Gallery = () => {
   const [filter, setFilter] = useState('Все');
-  const filters = ['Все', 'Маршруты', 'Старая Алушта', 'Архитектура', 'Артефакты'];
+  const filters = ['Все', 'Маршруты', 'Старая Алушта', 'Архитектура', 'Достижения'];
 
   useEffect(() => {
     window.scrollTo(0, 0);
