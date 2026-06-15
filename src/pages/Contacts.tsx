@@ -106,10 +106,10 @@ export const Contacts = () => {
                 <h4 className="font-sans font-bold uppercase tracking-widest text-[11px] text-charcoal/50 mb-4">Юридическая информация</h4>
                 <div className="flex flex-wrap gap-3">
                   {[
-                    { label: 'Политика конфиденциальности', href: '/privacy' },
-                    { label: 'Публичная оферта', href: '/offer' },
-                    { label: 'Обработка персональных данных', href: '/personal-data' },
-                    { label: 'Правила бронирования', href: '/booking-rules' },
+                    { label: 'Политика конфиденциальности', href: '/legal/privacy' },
+                    { label: 'Публичная оферта', href: '/legal/offer' },
+                    { label: 'Обработка персональных данных', href: '/legal/personal-data' },
+                    { label: 'Правила бронирования', href: '/legal/booking-rules' },
                   ].map((doc) => (
                     <Link
                       key={doc.href}
