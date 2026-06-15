@@ -96,7 +96,7 @@ export const Hero = () => {
         >
           <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl shadow-charcoal/15 bg-sand/20">
             <img
-              src="/PHOTOS/hero-nikolay-rusin.jpg"
+              src="/PHOTOS/hero/cover.jpg"
               alt="Николай Русин"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"

@@ -16,8 +16,8 @@ export const TOURS: Tour[] = [
     startPoint: 'Место встречи оговаривается отдельно',
     highlights: ['история появления ротонды на городской набережной', 'осмотр дачи Голубка, которую посещал Черчилль, Сталин и Николай II', 'рассказ о доме дедушки великого композитора Дмитрия Дмитриевича Шостаковича', 'осмотр средневековой крепости Алустон', 'осмотр старейшего питьевого фонтана города', 'посещение парка купца Н.Д. Стахеева', 'показ старинных открыток из коллекции экскурсовода'],
     features: ['6+', 'Пешеходная', 'Авторский маршрут'],
-    imageUrl: '/PHOTOS/DSC_5862.JPG',
-    gallery: ['/PHOTOS/DSC_5509.jpg', '/PHOTOS/DSC_5844.JPG', '/PHOTOS/DSC_5859.JPG', '/PHOTOS/DSC_5862.JPG', '/PHOTOS/DSC_5880.JPG', '/PHOTOS/DSC_5904.JPG', '/PHOTOS/DSC_5921.JPG'],
+    imageUrl: '/PHOTOS/gallery/architecture/DSC_5862.JPG',
+    gallery: ['/PHOTOS/_arhiv/DSC_5509.jpg', '/PHOTOS/about/02-na-marshrute.jpg', '/PHOTOS/_arhiv/DSC_5859.JPG', '/PHOTOS/gallery/architecture/DSC_5862.JPG', '/PHOTOS/_arhiv/DSC_5880.JPG', '/PHOTOS/about/03-s-gruppoy.jpg', '/PHOTOS/_arhiv/DSC_5921.JPG'],
     category: ['Индивидуальные', 'Пешеходные'],
     categories: ['Индивидуальные', 'Пешеходные']
   },
@@ -37,8 +37,8 @@ export const TOURS: Tour[] = [
     startPoint: 'Место встречи оговаривается отдельно',
     highlights: ['история двух дореволюционных отелей', 'посещение места, где проходил алуштинский рок-фестиваль', 'прогулка по алуштинскому терренкуру', 'осмотр дореволюционных вилл «Марина» и «Анна»', 'история появления названия «Профессорский уголок»', 'посещение музея-усадьбы архитектора А.Н. Бекетова', 'показ старинных открыток из коллекции'],
     features: ['6+', 'Пешеходная', 'Легкий маршрут'],
-    imageUrl: '/PHOTOS/31 августа-2011.jpg',
-    gallery: ['/PHOTOS/31 августа-2011.jpg', '/PHOTOS/31 августа-2017.jpg', '/PHOTOS/31 августа-2028.jpg', '/PHOTOS/31 августа-2034.jpg'],
+    imageUrl: '/PHOTOS/_arhiv/31-avgusta-2011.jpg',
+    gallery: ['/PHOTOS/_arhiv/31-avgusta-2011.jpg', '/PHOTOS/_arhiv/31-avgusta-2017.jpg', '/PHOTOS/_arhiv/31-avgusta-2028.jpg', '/PHOTOS/_arhiv/31-avgusta-2034.jpg'],
     category: ['Индивидуальные', 'Пешеходные'],
     categories: ['Индивидуальные', 'Пешеходные']
   },
@@ -58,8 +58,8 @@ export const TOURS: Tour[] = [
     startPoint: 'Место встречи оговаривается отдельно',
     highlights: ['форелевое хозяйство', 'Косьмо-дамиановский монастырь', 'императорский охотничий домик', 'бывшая госдача «Дубрава»', 'беседка ветров', 'музей партизанской славы'],
     features: ['6+', 'Автомобильная', 'Требуется удобная обувь'],
-    imageUrl: '/PHOTOS/IMG_8239.JPG',
-    gallery: ['/PHOTOS/IMG_8239.JPG', '/PHOTOS/IMG_6848.JPG', '/PHOTOS/IMG_6842.jpg'],
+    imageUrl: '/PHOTOS/gallery/routes/IMG_8239.JPG',
+    gallery: ['/PHOTOS/gallery/routes/IMG_8239.JPG', '/PHOTOS/gallery/achievements/IMG_6848.JPG', '/PHOTOS/gallery/achievements/IMG_6842.jpg'],
     category: ['Индивидуальные', 'Автомобильные'],
     categories: ['Индивидуальные', 'Автомобильные']
   },
@@ -79,8 +79,8 @@ export const TOURS: Tour[] = [
     startPoint: 'Место встречи оговаривается отдельно',
     highlights: ['дворец княгини Гагариной (1907 год)', 'старинный парк середины XIX века', 'фотосессия на мысе Плака', 'уникальный парк имения «Карасан»', 'старинный особняк семьи Раевских'],
     features: ['6+', 'Автомобильно-пешеходная'],
-    imageUrl: '/PHOTOS/IMG_8240.JPG',
-    gallery: ['/PHOTOS/IMG_8240.JPG', '/PHOTOS/DSC_5525.jpg', '/PHOTOS/photo_2022-08-03_21-08-54.jpg'],
+    imageUrl: '/PHOTOS/gallery/architecture/IMG_8240.JPG',
+    gallery: ['/PHOTOS/gallery/architecture/IMG_8240.JPG', '/PHOTOS/gallery/architecture/DSC_5525.jpg', '/PHOTOS/gallery/architecture/photo_2022-08-03_21-08-54.jpg'],
     category: ['Индивидуальные', 'Автомобильные'],
     categories: ['Индивидуальные', 'Автомобильные']
   },
@@ -99,8 +99,8 @@ export const TOURS: Tour[] = [
     startPoint: 'Место встречи оговаривается отдельно',
     highlights: ['место, где жил самый городской староста', 'почему улица названа в честь Максима Горького', 'район в честь героя Советского Союза', 'особняк влиятельного человека дореволюционной Алушты', 'история места алуштинского автовокзала', 'показ старинных открыток', 'поиск малоизвестных артефактов'],
     features: ['6+', 'Пешеходная', 'Для исследователей'],
-    imageUrl: '/PHOTOS/tour-neturisticheskaya-alushta.jpg',
-    gallery: ['/PHOTOS/DSC_5493.jpg', '/PHOTOS/DSC_5495.jpg', '/PHOTOS/DSC_5490.jpg'],
+    imageUrl: '/PHOTOS/tours/neturisticheskaya-alushta/cover.jpg',
+    gallery: ['/PHOTOS/gallery/old-alushta/DSC_5493.jpg', '/PHOTOS/gallery/architecture/DSC_5495.jpg', '/PHOTOS/gallery/architecture/DSC_5490.jpg'],
     category: ['Индивидуальные', 'Пешеходные'],
     categories: ['Индивидуальные', 'Пешеходные']
   },
@@ -119,8 +119,8 @@ export const TOURS: Tour[] = [
     startPoint: 'Место встречи оговаривается отдельно',
     highlights: ['первая в Алуште церковно-приходская школа', 'первоначальное расположение алуштинского базара', 'история пансионата "Северная Двина"', 'дом создателя Ленинградской школы детских хирургов', 'история Алуштинского эфиромасличного завода', 'показ старинных открыток', 'поиск малоизвестных артефактов'],
     features: ['6+', 'Пешеходная', 'Историческая'],
-    imageUrl: '/PHOTOS/IMG_3395.JPG',
-    gallery: ['/PHOTOS/IMG_3395.JPG', '/PHOTOS/DSC_5493.jpg', '/PHOTOS/IMG_7845.jpg'],
+    imageUrl: '/PHOTOS/gallery/routes/IMG_3395.JPG',
+    gallery: ['/PHOTOS/gallery/routes/IMG_3395.JPG', '/PHOTOS/gallery/old-alushta/DSC_5493.jpg', '/PHOTOS/gallery/routes/IMG_7845.jpg'],
     category: ['Индивидуальные', 'Пешеходные'],
     categories: ['Индивидуальные', 'Пешеходные']
   },
@@ -140,8 +140,8 @@ export const TOURS: Tour[] = [
     startPoint: 'Место встречи оговаривается отдельно',
     highlights: ['места съемок «Кавказская пленница» и «Спортлото 82»', 'эпизоды других советских кинолент', 'уникальные факты от очевидцев съемок', 'памятный сувенир'],
     features: ['6+', 'Пешеходная', 'Для киноманов'],
-    imageUrl: '/PHOTOS/tour-alushta-v-kino.jpg',
-    gallery: ['/PHOTOS/tour-alushta-v-kino.jpg', '/PHOTOS/DSC_5509.jpg', '/PHOTOS/DSC_5862.JPG'],
+    imageUrl: '/PHOTOS/tours/alushta-v-kino/cover.jpg',
+    gallery: ['/PHOTOS/tours/alushta-v-kino/cover.jpg', '/PHOTOS/_arhiv/DSC_5509.jpg', '/PHOTOS/gallery/architecture/DSC_5862.JPG'],
     category: ['Индивидуальные', 'Пешеходные'],
     categories: ['Индивидуальные', 'Пешеходные']
   },
@@ -161,8 +161,8 @@ export const TOURS: Tour[] = [
     startPoint: 'Место встречи оговаривается отдельно',
     highlights: ['знакомство с историей главной улицы города', 'поиск уникальных артефактов', 'история виноделия Алушты', 'винная дегустация на заводе 1830 года'],
     features: ['18+', 'Пешеходная', 'Дегустация'],
-    imageUrl: '/PHOTOS/photo_2022-08-03_21-08-54.jpg',
-    gallery: ['/PHOTOS/photo_2022-08-03_21-08-54.jpg', '/PHOTOS/DSC_5525.jpg', '/PHOTOS/IMG_8240.JPG'],
+    imageUrl: '/PHOTOS/gallery/architecture/photo_2022-08-03_21-08-54.jpg',
+    gallery: ['/PHOTOS/gallery/architecture/photo_2022-08-03_21-08-54.jpg', '/PHOTOS/gallery/architecture/DSC_5525.jpg', '/PHOTOS/gallery/architecture/IMG_8240.JPG'],
     category: ['Индивидуальные', 'Пешеходные'],
     categories: ['Индивидуальные', 'Пешеходные']
   },
@@ -182,8 +182,8 @@ export const TOURS: Tour[] = [
     startPoint: 'Место встречи оговаривается отдельно',
     highlights: ['дача «Голубка» (Николай II, Черчилль, Сталин)', 'дача Батуева (дедушка Шостаковича)', 'храм святого Феодора Стратилата (1842 г.)', 'имение купца Н.Д. Стахеева «Отрада»', 'развалины крепости «Алустон» (XIV век)', 'дача архитектора А.Н. Бекетова', 'усадебный дом профессора Голубева', 'дворец княгини Гагариной', 'старая ялтинская дорога и винный склад'],
     features: ['6+', 'Автомобильно-пешеходная'],
-    imageUrl: '/PHOTOS/DSC_5525.jpg',
-    gallery: ['/PHOTOS/DSC_5525.jpg', '/PHOTOS/IMG_8240.JPG', '/PHOTOS/DSC_5862.JPG'],
+    imageUrl: '/PHOTOS/gallery/architecture/DSC_5525.jpg',
+    gallery: ['/PHOTOS/gallery/architecture/DSC_5525.jpg', '/PHOTOS/gallery/architecture/IMG_8240.JPG', '/PHOTOS/gallery/architecture/DSC_5862.JPG'],
     category: ['Индивидуальные', 'Автомобильные'],
     categories: ['Индивидуальные', 'Автомобильные']
   }
@@ -206,7 +206,7 @@ export const EVENTS: EventItem[] = [
     paymentEnabled: true,
     status: 'published',
     category: ['Кино', 'Групповая'],
-    imageUrl: '/PHOTOS/tour-alushta-v-kino.jpg'
+    imageUrl: '/PHOTOS/tours/alushta-v-kino/cover.jpg'
   }
 ];
 
@@ -255,7 +255,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Почему Алушта не стала второй Ялтой',
     category: 'История',
     excerpt: 'Иногда история города определяется не только тем, что построили, но и тем, что так и не случилось.',
-    imageUrl: '/PHOTOS/blog-pochemu-alushta-ne-stala-yaltoy.jpg',
+    imageUrl: '/PHOTOS/blog/pochemu-alushta-ne-stala-yaltoy.jpg',
     publishedAt: '2026-04-10',
     isPublished: true
   },
@@ -265,7 +265,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Что можно узнать о городе по одной старой фотографии',
     category: 'Архив',
     excerpt: 'Старые снимки хороши тем, что не спорят. Они просто показывают детали, которые современный город уже успел спрятать.',
-    imageUrl: '/PHOTOS/blog-odna-staraya-fotografiya.jpg',
+    imageUrl: '/PHOTOS/blog/odna-staraya-fotografiya.jpg',
     publishedAt: '2026-04-15',
     isPublished: true
   }

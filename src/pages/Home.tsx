@@ -77,7 +77,7 @@ export const Home = () => {
             >
               <div className="aspect-[3/4] bg-sand rounded-2xl relative overflow-hidden group">
                 <img
-                  src="/PHOTOS/about-nikolay-rusin.jpg"
+                  src="/PHOTOS/about/01-portret.jpg"
                   alt="Николай Русин"
                   className="w-full h-full object-cover grayscale brightness-110 contrast-110 group-hover:grayscale-0 transition-all duration-1000"
                   referrerPolicy="no-referrer"
@@ -191,22 +191,22 @@ export const Home = () => {
             className="grid grid-cols-2 md:grid-cols-4 gap-3 h-[600px]"
           >
             <motion.div variants={childVariants} className="col-span-1 row-span-1 rounded-xl overflow-hidden group">
-              <img src="/PHOTOS/tour-znakomstvo-s-alushtoy.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out grayscale hover:grayscale-0" referrerPolicy="no-referrer" />
+              <img src="/PHOTOS/tours/znakomstvo-s-alushtoy/cover.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out grayscale hover:grayscale-0" referrerPolicy="no-referrer" />
             </motion.div>
             <motion.div variants={childVariants} className="col-span-1 row-span-2 rounded-xl overflow-hidden group">
-              <img src="/PHOTOS/tour-professorskiy-ugolok.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out grayscale hover:grayscale-0" referrerPolicy="no-referrer" />
+              <img src="/PHOTOS/tours/professorskiy-ugolok/cover.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out grayscale hover:grayscale-0" referrerPolicy="no-referrer" />
             </motion.div>
             <motion.div variants={childVariants} className="col-span-2 row-span-1 rounded-xl overflow-hidden group relative">
-              <img src="/PHOTOS/about-vintage-photo.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out grayscale hover:grayscale-0" referrerPolicy="no-referrer" />
+              <img src="/PHOTOS/about/04-arhiv.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out grayscale hover:grayscale-0" referrerPolicy="no-referrer" />
               <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <span className="text-sm font-bold uppercase tracking-widest border border-white px-6 py-2">Старая Алушта</span>
               </div>
             </motion.div>
             <motion.div variants={childVariants} className="col-span-1 row-span-1 rounded-xl overflow-hidden group">
-              <img src="/PHOTOS/tour-rassvetnaya-naberezhnaya.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out grayscale hover:grayscale-0" referrerPolicy="no-referrer" />
+              <img src="/PHOTOS/tours/rassvetnaya-naberezhnaya/cover.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out grayscale hover:grayscale-0" referrerPolicy="no-referrer" />
             </motion.div>
             <motion.div variants={childVariants} className="col-span-1 row-span-1 rounded-xl overflow-hidden group">
-              <img src="/PHOTOS/tour-bezuezdnyy-gorod.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out grayscale hover:grayscale-0" referrerPolicy="no-referrer" />
+              <img src="/PHOTOS/tours/bezuezdnyy-gorod/cover.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out grayscale hover:grayscale-0" referrerPolicy="no-referrer" />
             </motion.div>
           </motion.div>
         </div>

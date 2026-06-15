@@ -18,7 +18,7 @@ export const EventModal: React.FC<EventModalProps> = ({ event, onClose, onSave }
     seatsAvailable: 15,
     status: 'draft',
     description: '',
-    imageUrl: '/PHOTOS/tour-znakomstvo-s-alushtoy.jpg'
+    imageUrl: '/PHOTOS/tours/znakomstvo-s-alushtoy/cover.jpg'
   });
 
   const handleSubmit = (e: React.FormEvent) => {

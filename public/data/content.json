@@ -16,7 +16,7 @@
       "startPoint": "площадь Советская, 1, у памятника Грибоедову",
       "highlights": ["дача Батуева", "дача «Голубка»", "вилла Стахеева", "храм во имя всех Крымских святых", "башня крепости Алустон", "ротонда"],
       "features": ["Можно с детьми", "Архивные фото", "Взгляд местного"],
-      "imageUrl": "/PHOTOS/tour-znakomstvo-s-alushtoy.jpg",
+      "imageUrl": "/PHOTOS/tours/znakomstvo-s-alushtoy/cover.jpg",
       "category": ["Индивидуальные", "Пешеходные"]
     },
     {
@@ -35,7 +35,7 @@
       "startPoint": "у входа в ресторан «Встреча», ул. Ленина, 2",
       "highlights": ["музей А. Н. Бекетова", "вилла «Анна»", "вилла «Марина»", "дача семьи Ганнот", "аллея Декабристов"],
       "features": ["Архитектура", "Литературные тропы", "Видовые точки"],
-      "imageUrl": "/PHOTOS/tour-professorskiy-ugolok.jpg",
+      "imageUrl": "/PHOTOS/tours/professorskiy-ugolok/cover.jpg",
       "category": ["Индивидуальные", "Пешеходные"]
     },
     {
@@ -53,7 +53,7 @@
       "startPoint": "площадь Советская, возле фонтана",
       "highlights": ["старая городская среда", "архитектурные детали", "знаковые дома", "артефакты"],
       "features": ["Глубокое погружение", "Старые фото", "Редкие факты"],
-      "imageUrl": "/PHOTOS/tour-bezuezdnyy-gorod.jpg",
+      "imageUrl": "/PHOTOS/tours/bezuezdnyy-gorod/cover.jpg",
       "category": ["Сборные", "Пешеходные"]
     },
     {
@@ -71,7 +71,7 @@
       "startPoint": "обелиск первому правительству Республики Таврида",
       "highlights": ["набережная", "ротонда", "рассвет"],
       "features": ["Без суеты", "Рассвет у моря", "Уникальная атмосфера"],
-      "imageUrl": "/PHOTOS/tour-rassvetnaya-naberezhnaya.jpg",
+      "imageUrl": "/PHOTOS/tours/rassvetnaya-naberezhnaya/cover.jpg",
       "category": ["Сезонные", "Пешеходные"]
     },
     {
@@ -89,7 +89,7 @@
       "startPoint": "центр города",
       "highlights": ["знаковые места", "интерактивные остановки", "городские байки"],
       "features": ["Интерактив", "Для всей семьи", "Игровой формат"],
-      "imageUrl": "/PHOTOS/tour-ne-vydumannye-istorii.jpg",
+      "imageUrl": "/PHOTOS/tours/ne-vydumannye-istorii/cover.jpg",
       "category": ["Индивидуальные", "Семейные", "Интерактивные"]
     },
     {
@@ -107,7 +107,7 @@
       "startPoint": "площадь Советская",
       "highlights": ["места съемок Кавказской пленницы", "Спортлото-82", "узнаваемые виды"],
       "features": ["Для киноманов", "Легкий маршрут", "Много фото"],
-      "imageUrl": "/PHOTOS/tour-alushta-v-kino.jpg",
+      "imageUrl": "/PHOTOS/tours/alushta-v-kino/cover.jpg",
       "category": ["Пешеходные", "Сборные"]
     },
     {
@@ -125,7 +125,7 @@
       "startPoint": "велопрокат по ул. Ленина, 8а",
       "highlights": ["набережная", "Профессорский уголок", "остановки у достопримечательностей"],
       "features": ["На велосипеде", "Быстрый темп", "Охват"],
-      "imageUrl": "/PHOTOS/tour-kraevedcheskaya-veloprogulka.jpg",
+      "imageUrl": "/PHOTOS/tours/kraevedcheskaya-veloprogulka/cover.jpg",
       "category": ["Велоформат"]
     },
     {
@@ -143,7 +143,7 @@
       "startPoint": "уточняйте",
       "highlights": ["непарадные улицы", "городские детали", "дома", "дворы", "локальные сюжеты"],
       "features": ["Глубокая история", "Неизведанное", "Для гурманов"],
-      "imageUrl": "/PHOTOS/tour-neturisticheskaya-alushta.jpg",
+      "imageUrl": "/PHOTOS/tours/neturisticheskaya-alushta/cover.jpg",
       "category": ["Индивидуальные", "Пешеходные"]
     },
     {
@@ -161,7 +161,7 @@
       "startPoint": "сквер имени 40-летия Победы в Алуште",
       "highlights": ["памятные места Алушты, связанные с историей Великой Победы"],
       "features": ["Память", "Военная история"],
-      "imageUrl": "/PHOTOS/tour-oni-srazhalis-za-rodinu.jpg",
+      "imageUrl": "/PHOTOS/tours/oni-srazhalis-za-rodinu/cover.jpg",
       "category": ["Спецпроект", "Пешеходные"]
     }
   ],
@@ -182,7 +182,7 @@
       "paymentEnabled": true,
       "status": "published",
       "category": ["Кино", "Групповая"],
-      "imageUrl": "/PHOTOS/tour-alushta-v-kino.jpg"
+      "imageUrl": "/PHOTOS/tours/alushta-v-kino/cover.jpg"
     }
   ],
   "reviews": [
@@ -222,7 +222,7 @@
       "title": "Почему Алушта не стала второй Ялтой",
       "category": "История",
       "excerpt": "Иногда история города определяется не только тем, что построили, но и тем, что так и не случилось.",
-      "imageUrl": "/PHOTOS/blog-pochemu-alushta-ne-stala-yaltoy.jpg",
+      "imageUrl": "/PHOTOS/blog/pochemu-alushta-ne-stala-yaltoy.jpg",
       "publishedAt": "2026-04-10",
       "isPublished": true
     },
@@ -232,7 +232,7 @@
       "title": "Что можно узнать о городе по одной старой фотографии",
       "category": "Архив",
       "excerpt": "Старые снимки хороши тем, что не спорят. Они просто показывают детали, которые современный город уже успел спрятать.",
-      "imageUrl": "/PHOTOS/blog-odna-staraya-fotografiya.jpg",
+      "imageUrl": "/PHOTOS/blog/odna-staraya-fotografiya.jpg",
       "publishedAt": "2026-04-15",
       "isPublished": true
     }

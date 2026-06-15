@@ -11,10 +11,10 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 const aboutSlides = [
-  { src: '/PHOTOS/about-nikolay-rusin.jpg', caption: 'Николай Русин' },
-  { src: '/PHOTOS/DSC_5844.JPG', caption: 'На маршруте с группой' },
-  { src: '/PHOTOS/DSC_5904.JPG', caption: 'Исторический Алушта' },
-  { src: '/PHOTOS/about-vintage-photo.jpg', caption: 'Архивные материалы' },
+  { src: '/PHOTOS/about/01-portret.jpg', caption: 'Николай Русин' },
+  { src: '/PHOTOS/about/02-na-marshrute.jpg', caption: 'На маршруте с группой' },
+  { src: '/PHOTOS/about/03-s-gruppoy.jpg', caption: 'Исторический Алушта' },
+  { src: '/PHOTOS/about/04-arhiv.jpg', caption: 'Архивные материалы' },
 ];
 
 export const About = () => {
@@ -109,7 +109,7 @@ export const About = () => {
                   </p>
                 </div>
                 <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 blur-xl">
-                  <img src="/PHOTOS/about-vintage-photo.jpg" className="w-full h-full object-cover" />
+                  <img src="/PHOTOS/about/04-arhiv.jpg" className="w-full h-full object-cover" />
                 </div>
               </div>
 
