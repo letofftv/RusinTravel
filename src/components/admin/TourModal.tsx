@@ -24,7 +24,7 @@ export const TourModal: React.FC<TourModalProps> = ({ tour, onClose, onSave }) =
     startPoint: '',
     highlights: [],
     features: [],
-    imageUrl: '/PHOTOS/tours/znakomstvo-s-alushtoy/cover.jpg',
+    imageUrl: '/PHOTOS/tours/bezuezdnyy-gorod/cover.jpg',
     category: ['Индивидуальные']
   });
 

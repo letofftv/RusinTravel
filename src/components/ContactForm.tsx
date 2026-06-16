@@ -108,8 +108,8 @@ export const ContactForm = () => {
                   <option>Алушта — неизвестная история безуездного города</option>
                   <option>Истории Профессорского уголка</option>
                   <option>По Романовской дороге</option>
-                  <option>В гости к Раевским и Бороздиным</option>
-                  <option>Нетуристическая Алушта</option>
+                  <option>В гости к Бороздиным и Раевским</option>
+                  <option>НеТуристическая Алушта</option>
                   <option>От Базарной до Нижнемечетной</option>
                   <option>Снято в Алуште</option>
                   <option>От Виноградной до Ленина</option>

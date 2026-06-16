@@ -191,7 +191,7 @@ export const Home = () => {
             className="grid grid-cols-2 md:grid-cols-4 gap-3 h-[600px]"
           >
             <motion.div variants={childVariants} className="col-span-1 row-span-1 rounded-xl overflow-hidden group">
-              <img src="/PHOTOS/tours/znakomstvo-s-alushtoy/cover.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out grayscale hover:grayscale-0" referrerPolicy="no-referrer" />
+              <img src="/PHOTOS/tours/k-borozdinym-i-raevskim/cover.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out grayscale hover:grayscale-0" referrerPolicy="no-referrer" />
             </motion.div>
             <motion.div variants={childVariants} className="col-span-1 row-span-2 rounded-xl overflow-hidden group">
               <img src="/PHOTOS/tours/professorskiy-ugolok/cover.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out grayscale hover:grayscale-0" referrerPolicy="no-referrer" />
@@ -203,7 +203,7 @@ export const Home = () => {
               </div>
             </motion.div>
             <motion.div variants={childVariants} className="col-span-1 row-span-1 rounded-xl overflow-hidden group">
-              <img src="/PHOTOS/tours/rassvetnaya-naberezhnaya/cover.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out grayscale hover:grayscale-0" referrerPolicy="no-referrer" />
+              <img src="/PHOTOS/tours/po-romanovskoy-doroge/cover.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out grayscale hover:grayscale-0" referrerPolicy="no-referrer" />
             </motion.div>
             <motion.div variants={childVariants} className="col-span-1 row-span-1 rounded-xl overflow-hidden group">
               <img src="/PHOTOS/tours/bezuezdnyy-gorod/cover.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out grayscale hover:grayscale-0" referrerPolicy="no-referrer" />

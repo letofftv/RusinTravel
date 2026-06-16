@@ -140,8 +140,8 @@ export const TOURS: Tour[] = [
     startPoint: 'Место встречи оговаривается отдельно',
     highlights: ['места съемок «Кавказская пленница» и «Спортлото 82»', 'эпизоды других советских кинолент', 'уникальные факты от очевидцев съемок', 'памятный сувенир'],
     features: ['6+', 'Пешеходная', 'Для киноманов'],
-    imageUrl: '/PHOTOS/tours/alushta-v-kino/cover.jpg',
-    gallery: ['/PHOTOS/tours/alushta-v-kino/cover.jpg', '/PHOTOS/_arhiv/DSC_5509.jpg', '/PHOTOS/gallery/architecture/DSC_5862.JPG'],
+    imageUrl: '/PHOTOS/tours/snyato-v-alushte/cover.jpg',
+    gallery: ['/PHOTOS/tours/snyato-v-alushte/cover.jpg', '/PHOTOS/_arhiv/DSC_5509.jpg', '/PHOTOS/gallery/architecture/DSC_5862.JPG'],
     category: ['Индивидуальные', 'Пешеходные'],
     categories: ['Индивидуальные', 'Пешеходные']
   },
@@ -206,7 +206,7 @@ export const EVENTS: EventItem[] = [
     paymentEnabled: true,
     status: 'published',
     category: ['Кино', 'Групповая'],
-    imageUrl: '/PHOTOS/tours/alushta-v-kino/cover.jpg'
+    imageUrl: '/PHOTOS/tours/snyato-v-alushte/cover.jpg'
   }
 ];
 
