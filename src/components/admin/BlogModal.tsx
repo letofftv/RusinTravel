@@ -14,7 +14,7 @@ export const BlogModal: React.FC<BlogModalProps> = ({ post, onClose, onSave }) =
     slug: '',
     category: 'История',
     excerpt: '',
-    imageUrl: '/PHOTOS/blog/pochemu-alushta-ne-stala-yaltoy.jpg',
+    imageUrl: '/PHOTOS/blog/mayakovskiy-v-alushte.jpg',
     publishedAt: new Date().toISOString().split('T')[0],
     isPublished: true
   });

@@ -63,8 +63,8 @@ export const Footer = () => {
               </div>
             </div>
             <div className="space-y-1 text-[10px] opacity-30 font-sans uppercase tracking-widest">
-              <p>Самозанятый Русин Н.Н. / НПД</p>
-              <p>Бейдж экскурсовода: уточняется</p>
+              <p>Русин Николай Николаевич · ИНН 910101640463</p>
+              <p>Самозанятый (НПД) · аттестация Минкурортов Крыма, 2024</p>
             </div>
           </div>
         </div>

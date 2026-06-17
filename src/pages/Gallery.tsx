@@ -3,25 +3,27 @@ import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'motion/react';
 
 const galleryItems = [
-  { id: 1, src: '/PHOTOS/gallery/architecture/DSC_5489.jpg', category: 'Архитектура', title: 'Старинные фасады' },
-  { id: 2, src: '/PHOTOS/gallery/architecture/DSC_5490.jpg', category: 'Архитектура', title: 'Детали города' },
-  { id: 3, src: '/PHOTOS/gallery/old-alushta/DSC_5493.jpg', category: 'Старая Алушта', title: 'Исторический центр' },
-  { id: 4, src: '/PHOTOS/gallery/architecture/DSC_5495.jpg', category: 'Архитектура', title: 'Улицы Алушты' },
-  { id: 5, src: '/PHOTOS/gallery/architecture/DSC_5496.jpg', category: 'Архитектура', title: 'Городская среда' },
-  { id: 6, src: '/PHOTOS/gallery/old-alushta/DSC_5497.jpg', category: 'Старая Алушта', title: 'Уголки прошлого' },
-  { id: 7, src: '/PHOTOS/gallery/architecture/DSC_5502.jpg', category: 'Архитектура', title: 'Резные детали' },
-  { id: 8, src: '/PHOTOS/gallery/architecture/DSC_5522.jpg', category: 'Архитектура', title: 'Виллы' },
-  { id: 9, src: '/PHOTOS/gallery/architecture/DSC_5525.jpg', category: 'Архитектура', title: 'Дворец Гагариной' },
-  { id: 10, src: '/PHOTOS/gallery/routes/IMG_3395.JPG', category: 'Маршруты', title: 'Горные тропы' },
-  { id: 11, src: '/PHOTOS/gallery/achievements/IMG_6842.jpg', category: 'Достижения', title: 'Диплом экскурсовода' },
-  { id: 12, src: '/PHOTOS/gallery/achievements/IMG_6848.JPG', category: 'Достижения', title: 'Аттестация' },
-  { id: 13, src: '/PHOTOS/gallery/achievements/IMG_6849.JPG', category: 'Достижения', title: 'Сертификат' },
-  { id: 14, src: '/PHOTOS/gallery/routes/IMG_7845.jpg', category: 'Маршруты', title: 'Виды с высоты' },
-  { id: 15, src: '/PHOTOS/gallery/routes/IMG_8239.JPG', category: 'Маршруты', title: 'Романовское шоссе' },
-  { id: 16, src: '/PHOTOS/gallery/architecture/IMG_8240.JPG', category: 'Архитектура', title: 'Утес и Карасан' },
-  { id: 17, src: '/PHOTOS/gallery/routes/IMG_8257.JPG', category: 'Маршруты', title: 'Морское побережье' },
-  { id: 18, src: '/PHOTOS/gallery/architecture/photo_2022-08-03_21-08-54.jpg', category: 'Архитектура', title: 'Дом на Ленина' },
-  { id: 19, src: '/PHOTOS/gallery/architecture/DSC_5862.JPG', category: 'Архитектура', title: 'Башня Алустон' },
+  // Архитектура — реальные объекты
+  { id: 1, src: '/PHOTOS/gallery/architecture/dom-10-shostakovich.jpg', category: 'Архитектура', title: 'Дом Шостаковича (ул. Красноармейская, 10)' },
+  { id: 2, src: '/PHOTOS/gallery/architecture/villa-zheltaya.jpg', category: 'Архитектура', title: 'Старинная дача' },
+  { id: 3, src: '/PHOTOS/gallery/architecture/villa-memorial.jpg', category: 'Архитектура', title: 'Особняк с мемориальной доской' },
+  { id: 4, src: '/PHOTOS/gallery/architecture/hram.jpg', category: 'Архитектура', title: 'Храм' },
+  { id: 5, src: '/PHOTOS/gallery/architecture/photo_2022-08-03_21-08-54.jpg', category: 'Архитектура', title: 'Дом на улице Ленина' },
+  { id: 6, src: '/PHOTOS/gallery/architecture/IMG_8240.JPG', category: 'Архитектура', title: 'Утёс и Карасан' },
+  // Старая Алушта
+  { id: 7, src: '/PHOTOS/gallery/old-alushta/bashnya-alustron.jpg', category: 'Старая Алушта', title: 'Башня крепости Алустон' },
+  { id: 8, src: '/PHOTOS/gallery/old-alushta/DSC_5493.jpg', category: 'Старая Алушта', title: 'Исторический центр' },
+  { id: 9, src: '/PHOTOS/gallery/old-alushta/DSC_5497.jpg', category: 'Старая Алушта', title: 'Уголки старого города' },
+  // Маршруты
+  { id: 10, src: '/PHOTOS/gallery/architecture/DSC_5862.JPG', category: 'Маршруты', title: 'С группой на экскурсии' },
+  { id: 11, src: '/PHOTOS/gallery/architecture/DSC_5495.jpg', category: 'Маршруты', title: 'У ротонды «Алушта-курорт»' },
+  { id: 12, src: '/PHOTOS/gallery/routes/IMG_3395.JPG', category: 'Маршруты', title: 'Горные тропы' },
+  { id: 13, src: '/PHOTOS/gallery/routes/IMG_8239.JPG', category: 'Маршруты', title: 'Романовское шоссе' },
+  { id: 14, src: '/PHOTOS/gallery/routes/IMG_8257.JPG', category: 'Маршруты', title: 'Морское побережье' },
+  // Достижения
+  { id: 15, src: '/PHOTOS/gallery/achievements/IMG_6842.jpg', category: 'Достижения', title: 'Диплом экскурсовода' },
+  { id: 16, src: '/PHOTOS/gallery/achievements/IMG_6848.JPG', category: 'Достижения', title: 'Аттестация' },
+  { id: 17, src: '/PHOTOS/gallery/achievements/IMG_6849.JPG', category: 'Достижения', title: 'Сертификат' },
 ];
 
 

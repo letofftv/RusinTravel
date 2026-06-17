@@ -255,7 +255,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Почему Алушта не стала второй Ялтой',
     category: 'История',
     excerpt: 'Иногда история города определяется не только тем, что построили, но и тем, что так и не случилось.',
-    imageUrl: '/PHOTOS/blog/pochemu-alushta-ne-stala-yaltoy.jpg',
+    imageUrl: '/PHOTOS/blog/mayakovskiy-v-alushte.jpg',
     publishedAt: '2026-04-10',
     isPublished: true
   },
@@ -265,7 +265,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Что можно узнать о городе по одной старой фотографии',
     category: 'Архив',
     excerpt: 'Старые снимки хороши тем, что не спорят. Они просто показывают детали, которые современный город уже успел спрятать.',
-    imageUrl: '/PHOTOS/blog/odna-staraya-fotografiya.jpg',
+    imageUrl: '/PHOTOS/blog/shostakovich-i-alushta.jpg',
     publishedAt: '2026-04-15',
     isPublished: true
   }
