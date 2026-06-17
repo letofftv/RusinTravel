@@ -53,8 +53,10 @@ export const Contacts = () => {
                   <Mail size={20} />
                 </div>
                 <h4 className="font-sans font-bold uppercase tracking-widest text-[11px] text-marine mb-3">Email</h4>
-                <p className="text-base font-sans font-bold text-charcoal mb-1.5">Уточняется</p>
-                <p className="text-xs text-charcoal/40 leading-relaxed">Электронный адрес будет указан позже.</p>
+                <a href="mailto:nick.rusin2016@yandex.ru" className="text-base font-sans font-bold text-charcoal hover:text-marine transition-colors block mb-1.5 break-all">
+                  nick.rusin2016@yandex.ru
+                </a>
+                <p className="text-xs text-charcoal/40 leading-relaxed">Для вопросов и заявок на экскурсии.</p>
               </div>
 
               {/* Соцсети */}
