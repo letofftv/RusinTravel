@@ -11,3 +11,6 @@ OUT/
 BACKUP/
 UPD/
 .vercel
+
+# Серверные секреты — НЕ коммитить
+public/api/config.local.php

@@ -2,46 +2,44 @@
 /**
  * Конфигурация backend TravelRusin.ru
  *
- * ВАЖНО: этот файл НЕ должен отдаваться браузеру напрямую.
- * Защита через .htaccess (Deny from all для config.php).
- * На reg.ru дополнительно вынесите секреты в переменные окружения ispmanager.
+ * СЕКРЕТЫ ЗДЕСЬ НЕ ХРАНЯТСЯ. Этот файл коммитится в git (репозиторий публичный).
+ * Реальные значения (пароль БД, хэш пароля админки, вебхуки) задаются в
+ * config.local.php — он в .gitignore и лежит только на сервере (заливается по FTP).
+ *
+ * config.local.php определяет нужные константы ПЕРВЫМ; ниже идут безопасные
+ * значения по умолчанию для тех, что не заданы локально.
  */
 
-// ─── Битрикс24 ────────────────────────────────────────────────────────────────
-// Входящий вебхук. Никогда не попадает в JS-бандл.
-define('BITRIX_WEBHOOK', 'https://b24-vwlq3l.bitrix24.ru/rest/13/REMOVED_BITRIX_WEBHOOK_TOKEN/');
+// Подключаем локальные секреты, если есть (на сервере)
+@include __DIR__ . '/config.local.php';
 
-// ID пользователя Битрикс24, который будет ответственным за задачи-заявки
-// Узнать: в Битриксе → Сотрудники → свой профиль → ID в URL
-define('BITRIX_RESPONSIBLE_ID', 13);
+$defaults = [
+    // ─── База данных (MySQL) ───
+    'DB_HOST'    => 'localhost',
+    'DB_NAME'    => '',
+    'DB_USER'    => '',
+    'DB_PASS'    => '',
+    'DB_CHARSET' => 'utf8mb4',
 
-// ─── Авторизация админки ──────────────────────────────────────────────────────
-// Хэш пароля (bcrypt). Сгенерировать новый:
-//   php -r "echo password_hash('ВАШ_ПАРОЛЬ', PASSWORD_BCRYPT);"
-// Текущий хэш соответствует 'admin123' — СМЕНИТЕ перед деплоем на прод!
-define('ADMIN_PASSWORD_HASH', 'REMOVED_ADMIN_HASH');
+    // ─── Уведомления о заявках ───
+    'LEAD_NOTIFY_EMAIL' => '',
+    'MAIL_FROM'         => 'noreply@travelrusin.ru',
+    'FALLBACK_EMAIL'    => '',
 
-// ─── Настройки сессии ─────────────────────────────────────────────────────────
-define('SESSION_NAME', 'rusin_admin');
-define('SESSION_LIFETIME', 7200); // 2 часа в секундах
+    // ─── Авторизация админки (bcrypt-хэш) ───
+    'ADMIN_PASSWORD_HASH' => '',
 
-// ─── База данных (MySQL, reg.ru) ──────────────────────────────────────────────
-// Создайте БД в панели reg.ru (ispmanager → Базы данных) и впишите данные сюда.
-// Хост на shared-хостинге reg.ru почти всегда 'localhost'.
-define('DB_HOST', 'localhost');
-define('DB_NAME', '');   // напр. u3301450_rusin
-define('DB_USER', '');   // напр. u3301450_rusin
-define('DB_PASS', '');   // пароль пользователя БД
-define('DB_CHARSET', 'utf8mb4');
+    // ─── Битрикс24 (опционально, сейчас не используется для заявок) ───
+    'BITRIX_WEBHOOK'        => '',
+    'BITRIX_RESPONSIBLE_ID' => 0,
 
-// ─── Уведомления о заявках ────────────────────────────────────────────────────
-// Куда слать письмо при каждой новой заявке.
-define('LEAD_NOTIFY_EMAIL', 'nick.rusin2016@yandex.ru');
-define('MAIL_FROM', 'noreply@travelrusin.ru');
+    // ─── Сессия / прочее ───
+    'SESSION_NAME'     => 'rusin_admin',
+    'SESSION_LIFETIME' => 7200,
+    'SITE_NAME'        => 'TravelRusin.ru',
+    'ALLOWED_ORIGIN'   => '',   // '' = любой; на проде укажите 'https://travelrusin.ru'
+];
 
-// Резервный email (если БД недоступна — заявка всё равно уйдёт письмом + в лог)
-define('FALLBACK_EMAIL', 'nick.rusin2016@yandex.ru');
-define('SITE_NAME', 'TravelRusin.ru');
-
-// ─── Разрешённый origin для CORS ─────────────────────────────────────────────
-define('ALLOWED_ORIGIN', '');       // '' = любой. На проде укажите домен: 'https://travelrusin.ru'
+foreach ($defaults as $k => $v) {
+    if (!defined($k)) define($k, $v);
+}
