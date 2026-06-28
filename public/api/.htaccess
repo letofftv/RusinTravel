@@ -9,6 +9,16 @@
     Deny from all
 </Files>
 
+<Files "db.php">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "schema.sql">
+    Order allow,deny
+    Deny from all
+</Files>
+
 # Директория bitrix — только client.php (подключается через require_once)
 <FilesMatch "client\.php$">
     Order allow,deny

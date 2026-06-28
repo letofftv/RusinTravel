@@ -25,9 +25,22 @@ define('ADMIN_PASSWORD_HASH', 'REMOVED_ADMIN_HASH');
 define('SESSION_NAME', 'rusin_admin');
 define('SESSION_LIFETIME', 7200); // 2 часа в секундах
 
-// ─── Резервное уведомление ───────────────────────────────────────────────────
-// Если Битрикс недоступен — заявка логируется и шлётся письмом
-define('FALLBACK_EMAIL', 'nick.rusin2016@yandex.ru');  // резервные уведомления о заявках
+// ─── База данных (MySQL, reg.ru) ──────────────────────────────────────────────
+// Создайте БД в панели reg.ru (ispmanager → Базы данных) и впишите данные сюда.
+// Хост на shared-хостинге reg.ru почти всегда 'localhost'.
+define('DB_HOST', 'localhost');
+define('DB_NAME', '');   // напр. u3301450_rusin
+define('DB_USER', '');   // напр. u3301450_rusin
+define('DB_PASS', '');   // пароль пользователя БД
+define('DB_CHARSET', 'utf8mb4');
+
+// ─── Уведомления о заявках ────────────────────────────────────────────────────
+// Куда слать письмо при каждой новой заявке.
+define('LEAD_NOTIFY_EMAIL', 'nick.rusin2016@yandex.ru');
+define('MAIL_FROM', 'noreply@travelrusin.ru');
+
+// Резервный email (если БД недоступна — заявка всё равно уйдёт письмом + в лог)
+define('FALLBACK_EMAIL', 'nick.rusin2016@yandex.ru');
 define('SITE_NAME', 'TravelRusin.ru');
 
 // ─── Разрешённый origin для CORS ─────────────────────────────────────────────

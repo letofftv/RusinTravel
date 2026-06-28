@@ -13,15 +13,18 @@ import {
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 
-interface BitrixTask {
-  id: string;
-  title: string;
-  status: string;
-  createdDate: string;
-  deadline: string;
-  clientName: string;
-  clientPhone: string;
+interface Lead {
+  id: number;
+  createdAt: string;
+  name: string;
+  phone: string;
   tour: string;
+  date: string;
+  guests: number;
+  children: number;
+  contactMethod: string;
+  comment: string;
+  status: string;
 }
 
 interface Stats {
@@ -55,32 +58,32 @@ const StatCard = ({ title, value, icon: Icon, color }: any) => (
 );
 
 export const AdminDashboard = () => {
-  const [tasks, setTasks] = useState<BitrixTask[]>([]);
+  const [leads, setLeads] = useState<Lead[]>([]);
   const [stats, setStats] = useState<Stats | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  const loadTasks = async () => {
+  const loadLeads = async () => {
     setLoading(true);
     setError('');
     try {
-      const res = await fetch('/api/bitrix/tasks.php', { credentials: 'include' });
+      const res = await fetch('/api/leads.php', { credentials: 'include' });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
       if (data.success) {
-        setTasks(data.tasks ?? []);
+        setLeads(data.leads ?? []);
         setStats(data.stats ?? null);
       } else {
         throw new Error(data.message || 'Ошибка загрузки');
       }
     } catch (e: any) {
-      setError(e.message || 'Не удалось загрузить заявки из Битрикс24');
+      setError(e.message || 'Не удалось загрузить заявки из базы данных');
     } finally {
       setLoading(false);
     }
   };
 
-  useEffect(() => { loadTasks(); }, []);
+  useEffect(() => { loadLeads(); }, []);
 
   const formatDate = (iso: string) => {
     if (!iso) return '—';
@@ -103,9 +106,9 @@ export const AdminDashboard = () => {
         {/* Заявки из Битрикса */}
         <div className="lg:col-span-2 bg-white rounded-3xl border border-slate-100 shadow-sm p-8">
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-xl font-bold text-slate-800">Заявки из Битрикс24</h2>
+            <h2 className="text-xl font-bold text-slate-800">Заявки с сайта</h2>
             <button
-              onClick={loadTasks}
+              onClick={loadLeads}
               className="text-turquoise text-sm font-bold flex items-center gap-1.5 hover:gap-2 transition-all"
             >
               <RefreshCw size={14} className={loading ? 'animate-spin' : ''} />
@@ -126,9 +129,9 @@ export const AdminDashboard = () => {
           {loading && !error ? (
             <div className="py-12 text-center">
               <div className="animate-spin w-8 h-8 border-4 border-turquoise border-t-transparent rounded-full mx-auto mb-3" />
-              <p className="text-slate-400 text-sm">Загрузка из Битрикс24...</p>
+              <p className="text-slate-400 text-sm">Загрузка заявок...</p>
             </div>
-          ) : tasks.length === 0 && !error ? (
+          ) : leads.length === 0 && !error ? (
             <div className="py-12 text-center">
               <p className="text-slate-400 font-serif italic">Заявок пока нет</p>
               <p className="text-slate-300 text-xs mt-2">Они появятся здесь после отправки формы на сайте</p>
@@ -140,23 +143,23 @@ export const AdminDashboard = () => {
                   <tr className="text-left text-[10px] uppercase tracking-widest text-slate-400 border-b border-slate-50">
                     <th className="pb-4 font-bold">Клиент</th>
                     <th className="pb-4 font-bold">Экскурсия</th>
-                    <th className="pb-4 font-bold">Дедлайн</th>
+                    <th className="pb-4 font-bold">Дата</th>
                     <th className="pb-4 font-bold">Статус</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-50">
-                  {tasks.slice(0, 15).map((task) => {
-                    const s = statusLabels[task.status] ?? statusLabels.new;
+                  {leads.slice(0, 15).map((lead) => {
+                    const s = statusLabels[lead.status] ?? statusLabels.new;
                     return (
-                      <tr key={task.id} className="group hover:bg-slate-50/50 transition-colors">
+                      <tr key={lead.id} className="group hover:bg-slate-50/50 transition-colors">
                         <td className="py-4">
-                          <p className="font-medium text-slate-800 text-sm">{task.clientName || task.title}</p>
-                          {task.clientPhone && (
-                            <p className="text-xs text-slate-400">{task.clientPhone}</p>
+                          <p className="font-medium text-slate-800 text-sm">{lead.name}</p>
+                          {lead.phone && (
+                            <p className="text-xs text-slate-400">{lead.phone}</p>
                           )}
                         </td>
-                        <td className="py-4 text-slate-500 text-sm max-w-[160px] truncate">{task.tour || '—'}</td>
-                        <td className="py-4 text-slate-500 text-sm">{formatDate(task.deadline)}</td>
+                        <td className="py-4 text-slate-500 text-sm max-w-[160px] truncate">{lead.tour || '—'}</td>
+                        <td className="py-4 text-slate-500 text-sm">{lead.date || formatDate(lead.createdAt)}</td>
                         <td className="py-4">
                           <span className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ${s.color}`}>
                             {s.label}
@@ -196,14 +199,12 @@ export const AdminDashboard = () => {
               <FileText size={20} className="text-slate-300 group-hover:text-charcoal" />
             </Link>
             <a
-              href={`https://b24-vwlq3l.bitrix24.ru/workgroups/group/`}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:nick.rusin2016@yandex.ru"
               className="w-full p-4 bg-slate-50 hover:bg-turquoise hover:text-charcoal rounded-2xl text-left transition-all group flex items-center justify-between"
             >
               <div>
-                <p className="font-bold text-sm">Открыть Битрикс24</p>
-                <p className="text-xs text-slate-400 group-hover:text-charcoal/50">Управление задачами</p>
+                <p className="font-bold text-sm">Почта для заявок</p>
+                <p className="text-xs text-slate-400 group-hover:text-charcoal/50">Уведомления приходят сюда</p>
               </div>
               <Users size={20} className="text-slate-300 group-hover:text-charcoal" />
             </a>

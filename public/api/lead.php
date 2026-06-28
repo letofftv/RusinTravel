@@ -1,19 +1,18 @@
 <?php
 /**
- * lead.php — приём заявки с формы и создание Задачи в Битрикс24
+ * lead.php — приём заявки с формы → сохранение в БД + email-уведомление.
  *
  * POST /api/lead.php
- * Body: { name, phone, tour, date, guests, children, contactMethod, comment }
+ * Body: { name, phone, tour, date, guests, children, contactMethod, comment, sourcePage }
  *
  * Ответы:
- *   200 { success: true,  taskId: N }
- *   200 { success: true,  fallback: true }   — Bitrix недоступен, но резерв сработал
+ *   200 { success: true, leadId: N }            — сохранено в БД (+ отправлено письмо)
+ *   200 { success: true, fallback: true }        — БД недоступна, но письмо+лог сработали
  *   400 { success: false, message: "..." }
- *   500 { success: false, message: "..." }
  */
 
 require_once __DIR__ . '/config.php';
-require_once __DIR__ . '/bitrix/client.php';
+require_once __DIR__ . '/db.php';
 
 // ── CORS ──────────────────────────────────────────────────────────────────────
 $origin = ALLOWED_ORIGIN ?: '*';
@@ -29,113 +28,86 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// ── Парсинг входящих данных ────────────────────────────────────────────────────
+// ── Входные данные ─────────────────────────────────────────────────────────────
 $body = json_decode(file_get_contents('php://input'), true);
-
 if (!$body) {
     http_response_code(400);
     echo json_encode(['success' => false, 'message' => 'Invalid JSON'], JSON_UNESCAPED_UNICODE);
     exit;
 }
 
-// Валидация обязательных полей
 $name  = trim($body['name']  ?? '');
 $phone = trim($body['phone'] ?? '');
-
 if (!$name || !$phone) {
     http_response_code(400);
     echo json_encode(['success' => false, 'message' => 'Имя и телефон обязательны'], JSON_UNESCAPED_UNICODE);
     exit;
 }
 
-// Санитизация
-$tour          = htmlspecialchars($body['tour']          ?? 'Не указана',   ENT_QUOTES, 'UTF-8');
-$date          = htmlspecialchars($body['date']          ?? 'Не указана',   ENT_QUOTES, 'UTF-8');
+$tour          = trim($body['tour']          ?? 'Не указана');
+$date          = trim($body['date']          ?? '');
 $guests        = intval($body['guests']   ?? 0);
 $children      = intval($body['children'] ?? 0);
-$contactMethod = htmlspecialchars($body['contactMethod'] ?? 'Не указан',    ENT_QUOTES, 'UTF-8');
-$comment       = htmlspecialchars($body['comment']       ?? '',             ENT_QUOTES, 'UTF-8');
-$sourcePage    = htmlspecialchars($body['sourcePage']    ?? '',             ENT_QUOTES, 'UTF-8');
+$contactMethod = trim($body['contactMethod'] ?? '');
+$comment       = trim($body['comment']       ?? '');
+$sourcePage    = trim($body['sourcePage']    ?? '');
+$ip            = $_SERVER['REMOTE_ADDR'] ?? '';
 
-// ── Формируем описание задачи ─────────────────────────────────────────────────
-$guestsText = $guests . ' взр' . ($children > 0 ? " + $children дет" : '');
+// ── Письмо-уведомление ─────────────────────────────────────────────────────────
+function send_lead_email(array $d): void {
+    $guestsText = $d['guests'] . ' взр' . ($d['children'] > 0 ? " + {$d['children']} дет" : '');
+    $body = "Новая заявка с сайта TravelRusin.ru\n\n"
+          . "Имя:        {$d['name']}\n"
+          . "Телефон:    {$d['phone']}\n"
+          . "Связь:      {$d['contactMethod']}\n"
+          . "Экскурсия:  {$d['tour']}\n"
+          . "Дата:       {$d['date']}\n"
+          . "Состав:     {$guestsText}\n"
+          . "Комментарий: {$d['comment']}\n"
+          . "Источник:   {$d['sourcePage']}\n"
+          . "Время:      " . date('Y-m-d H:i:s') . "\n";
+    $subject = '=?UTF-8?B?' . base64_encode("Заявка с сайта: {$d['name']} — {$d['tour']}") . '?=';
+    $headers = 'From: ' . SITE_NAME . ' <' . MAIL_FROM . ">\r\n"
+             . "Reply-To: {$d['phone']}\r\n"
+             . "Content-Type: text/plain; charset=UTF-8\r\n";
+    @mail(LEAD_NOTIFY_EMAIL, $subject, $body, $headers);
+}
 
-$description = <<<TEXT
-📋 ЗАЯВКА С САЙТА TRAVELRUSIN.RU
+$lead = compact('name', 'phone', 'tour', 'date', 'guests', 'children', 'contactMethod', 'comment', 'sourcePage');
 
-👤 Имя:         $name
-📞 Телефон:     $phone
-📱 Связь:       $contactMethod
+// ── Сохранение в БД ────────────────────────────────────────────────────────────
+$pdo = db();
+if ($pdo) {
+    try {
+        $stmt = $pdo->prepare(
+            'INSERT INTO leads (name, phone, tour, preferred_date, guests, children, contact_method, comment, source_page, ip)
+             VALUES (:name, :phone, :tour, :date, :guests, :children, :cm, :comment, :src, :ip)'
+        );
+        $stmt->execute([
+            ':name' => $name, ':phone' => $phone, ':tour' => $tour, ':date' => $date,
+            ':guests' => $guests, ':children' => $children, ':cm' => $contactMethod,
+            ':comment' => $comment, ':src' => $sourcePage, ':ip' => $ip,
+        ]);
+        $leadId = (int)$pdo->lastInsertId();
 
-🗺 Экскурсия:   $tour
-📅 Дата:        $date
-👥 Состав:      $guestsText
+        send_lead_email($lead);
 
-💬 Комментарий: $comment
-
-🌐 Источник:    $sourcePage
-⏰ Время заявки: {$_SERVER['REQUEST_TIME']} UTC
-TEXT;
-
-// Дедлайн задачи — дата экскурсии (или +3 дня если дата не указана)
-$deadline = '';
-if ($date && $date !== 'Не указана') {
-    $ts = strtotime($date);
-    if ($ts !== false) {
-        $deadline = date('Y-m-d\TH:i:s', $ts);
+        echo json_encode(['success' => true, 'leadId' => $leadId], JSON_UNESCAPED_UNICODE);
+        exit;
+    } catch (Throwable $e) {
+        error_log('[rusin_lead] DB insert failed: ' . $e->getMessage());
+        // падаем в резерв ниже
     }
 }
-if (!$deadline) {
-    $deadline = date('Y-m-d\TH:i:s', strtotime('+3 days'));
-}
 
-$taskTitle = "Заявка: $name — $tour ($date)";
+// ── Резерв: БД недоступна → лог + письмо ───────────────────────────────────────
+$logFile = __DIR__ . '/../../logs/leads_fallback.log';
+if (!is_dir(dirname($logFile))) { @mkdir(dirname($logFile), 0750, true); }
+@file_put_contents(
+    $logFile,
+    date('Y-m-d H:i:s') . " | $name | $phone | $tour | $date | $comment\n",
+    FILE_APPEND | LOCK_EX
+);
+send_lead_email($lead);
 
-// ── Отправка в Битрикс24 ──────────────────────────────────────────────────────
-$bitrix = new BitrixClient();
-
-$taskFields = [
-    'TITLE'          => $taskTitle,
-    'DESCRIPTION'    => $description,
-    'RESPONSIBLE_ID' => BITRIX_RESPONSIBLE_ID,
-    'DEADLINE'       => $deadline,
-    'PRIORITY'       => 1,       // Обычный
-    'ALLOW_CHANGE_DEADLINE' => 'Y',
-    'UF_CRM_TASK'    => [],      // CRM-связи пока пустые
-    'TAGS'           => ['заявка', 'сайт'],
-];
-
-$task = $bitrix->taskAdd($taskFields);
-
-if ($task && !empty($task['id'])) {
-    // Успешно создана задача
-    echo json_encode([
-        'success' => true,
-        'taskId'  => $task['id'],
-    ], JSON_UNESCAPED_UNICODE);
-    exit;
-}
-
-// ── Резерв: Bitrix недоступен ─────────────────────────────────────────────────
-$logEntry = date('Y-m-d H:i:s') . " | $name | $phone | $tour | $date\n";
-$logFile  = __DIR__ . '/../../logs/leads_fallback.log';
-
-// Создаём директорию logs если нет
-if (!is_dir(dirname($logFile))) {
-    @mkdir(dirname($logFile), 0750, true);
-}
-@file_put_contents($logFile, $logEntry, FILE_APPEND | LOCK_EX);
-
-// Отправка на email если настроен
-if (FALLBACK_EMAIL) {
-    $subject = "Новая заявка с сайта: $name";
-    $headers = "From: noreply@travelrusin.ru\r\nContent-Type: text/plain; charset=UTF-8";
-    @mail(FALLBACK_EMAIL, $subject, $description, $headers);
-}
-
-// Пользователю всё равно показываем успех (резерв сработал)
-echo json_encode([
-    'success'  => true,
-    'fallback' => true,
-    'message'  => 'Заявка принята (резервный канал)',
-], JSON_UNESCAPED_UNICODE);
+echo json_encode(['success' => true, 'fallback' => true], JSON_UNESCAPED_UNICODE);
