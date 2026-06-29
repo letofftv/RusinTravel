@@ -1,0 +1,19 @@
+# SPA-маршрутизация для React Router на Apache (reg.ru)
+# Все запросы, кроме реальных файлов/папок, отдаём в index.html —
+# дальше маршрут обрабатывает клиентский роутер.
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Реальные файлы и директории (assets, PHOTOS, api/*.php, data, logos) — как есть
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Всё остальное → SPA
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# Не показывать листинг директорий
+Options -Indexes

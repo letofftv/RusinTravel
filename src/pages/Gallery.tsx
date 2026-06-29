@@ -93,7 +93,7 @@ export const Gallery = () => {
                   <img 
                     src={item.src} 
                     alt={item.title}
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-out"
+                    className="w-full h-full object-cover saturate-50 hover:saturate-100 transition-all duration-700 ease-out"
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">

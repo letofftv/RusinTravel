@@ -79,7 +79,7 @@ export const Home = () => {
                 <img
                   src="/PHOTOS/about/01-portret.jpg"
                   alt="Николай Русин"
-                  className="w-full h-full object-cover grayscale brightness-110 contrast-110 group-hover:grayscale-0 transition-all duration-1000"
+                  className="w-full h-full object-cover saturate-50 group-hover:saturate-100 transition-all duration-1000"
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-marine/10 mix-blend-multiply" />
@@ -191,22 +191,22 @@ export const Home = () => {
             className="grid grid-cols-2 md:grid-cols-4 gap-3 h-[600px]"
           >
             <motion.div variants={childVariants} className="col-span-1 row-span-1 rounded-xl overflow-hidden group">
-              <img src="/PHOTOS/tours/k-borozdinym-i-raevskim/cover.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out grayscale hover:grayscale-0" referrerPolicy="no-referrer" />
+              <img src="/PHOTOS/tours/k-borozdinym-i-raevskim/cover.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out saturate-50 hover:saturate-100" referrerPolicy="no-referrer" />
             </motion.div>
             <motion.div variants={childVariants} className="col-span-1 row-span-2 rounded-xl overflow-hidden group">
-              <img src="/PHOTOS/tours/professorskiy-ugolok/cover.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out grayscale hover:grayscale-0" referrerPolicy="no-referrer" />
+              <img src="/PHOTOS/tours/professorskiy-ugolok/cover.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out saturate-50 hover:saturate-100" referrerPolicy="no-referrer" />
             </motion.div>
             <motion.div variants={childVariants} className="col-span-2 row-span-1 rounded-xl overflow-hidden group relative">
-              <img src="/PHOTOS/about/04-arhiv.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out grayscale hover:grayscale-0" referrerPolicy="no-referrer" />
+              <img src="/PHOTOS/about/04-arhiv.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out saturate-50 hover:saturate-100" referrerPolicy="no-referrer" />
               <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <span className="text-sm font-bold uppercase tracking-widest border border-white px-6 py-2">Старая Алушта</span>
               </div>
             </motion.div>
             <motion.div variants={childVariants} className="col-span-1 row-span-1 rounded-xl overflow-hidden group">
-              <img src="/PHOTOS/tours/po-romanovskoy-doroge/cover.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out grayscale hover:grayscale-0" referrerPolicy="no-referrer" />
+              <img src="/PHOTOS/tours/po-romanovskoy-doroge/cover.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out saturate-50 hover:saturate-100" referrerPolicy="no-referrer" />
             </motion.div>
             <motion.div variants={childVariants} className="col-span-1 row-span-1 rounded-xl overflow-hidden group">
-              <img src="/PHOTOS/tours/bezuezdnyy-gorod/cover.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out grayscale hover:grayscale-0" referrerPolicy="no-referrer" />
+              <img src="/PHOTOS/tours/bezuezdnyy-gorod/cover.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out saturate-50 hover:saturate-100" referrerPolicy="no-referrer" />
             </motion.div>
           </motion.div>
         </div>
